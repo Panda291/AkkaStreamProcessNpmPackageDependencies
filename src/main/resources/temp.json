@@ -1,0 +1,5405 @@
+{
+  "_id": "alex",
+  "_rev": "37-caa22aca1845045055cb46878f27270c",
+  "name": "alex",
+  "description": "Catch insensitive, inconsiderate writing",
+  "dist-tags": {
+    "latest": "10.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "alex",
+      "version": "1.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "chalk": "^1.1.0",
+        "get-stdin": "^5.0.0",
+        "globby": "^3.0.0",
+        "mdast": "^1.0.0",
+        "mdast-util-to-nlcst": "^0.2.0",
+        "meow": "^3.3.0",
+        "retext": "^1.0.0-rc.4",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.0.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.1.0",
+        "browserify": "^11.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "istanbul": "^0.3.0",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "istanbul cover ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js *.md !example.md",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "55c46f0431798775a4c5e1d262319279646ab0cd",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.0.0",
+      "_shasum": "1da569ff6c95406575247d5a31057a156273a621",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "1da569ff6c95406575247d5a31057a156273a621",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "alex",
+      "version": "1.1.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "chalk": "^1.1.0",
+        "get-stdin": "^5.0.0",
+        "globby": "^3.0.0",
+        "mdast": "^1.0.0",
+        "mdast-util-to-nlcst": "^0.2.0",
+        "meow": "^3.3.0",
+        "retext": "^1.0.0-rc.4",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.2.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.1.0",
+        "browserify": "^11.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "istanbul": "^0.3.0",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "istanbul cover ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js *.md !example.md",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "f0a803edd80bb583467becfbab5040f0ee767a54",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.1.0",
+      "_shasum": "acb29d2e3d510b31e19917a5071963f25461fac9",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "acb29d2e3d510b31e19917a5071963f25461fac9",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "alex",
+      "version": "1.2.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "chalk": "^1.1.0",
+        "get-stdin": "^5.0.0",
+        "globby": "^3.0.0",
+        "mdast": "^1.0.0",
+        "mdast-util-to-nlcst": "^1.0.0",
+        "meow": "^3.3.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.2.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.2.0",
+        "browserify": "^11.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "istanbul": "^0.3.0",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "istanbul cover ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js *.md !example.md --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "d9046a40e7338cb08159ea977bdb3e9b84a2d7cf",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.2.0",
+      "_shasum": "00a94c16d1ac69abaa1805e65abedc34588b5b07",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "00a94c16d1ac69abaa1805e65abedc34588b5b07",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "alex",
+      "version": "1.3.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "chalk": "^1.1.0",
+        "get-stdin": "^5.0.0",
+        "globby": "^3.0.0",
+        "mdast": "^1.0.0",
+        "mdast-util-to-nlcst": "^1.0.0",
+        "meow": "^3.3.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.4.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.2.0",
+        "browserify": "^11.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "istanbul": "^0.3.0",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "istanbul cover ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js *.md !example.md --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "b78448c4165f55183ed16f9f058c1148f6a0a581",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.3.0",
+      "_shasum": "0fb7cbbe1266cb9d0e2685a6111b92b99190558c",
+      "_from": ".",
+      "_npmVersion": "3.3.0",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "0fb7cbbe1266cb9d0e2685a6111b92b99190558c",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "alex",
+      "version": "1.4.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "globby": "^3.0.0",
+        "mdast": "^2.0.0",
+        "mdast-util-to-nlcst": "^1.0.0",
+        "meow": "^3.3.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.5.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.2.0",
+        "browserify": "^11.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "istanbul": "^0.3.0",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "istanbul cover ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js *.md !example.md --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "d400940cda32699da5168504a2c2b7c9035a5a92",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.4.0",
+      "_shasum": "d2ec40f27fd6a7070bd6ac99d39a72ba712aa382",
+      "_from": ".",
+      "_npmVersion": "3.3.5",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "d2ec40f27fd6a7070bd6ac99d39a72ba712aa382",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "alex",
+      "version": "1.5.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "globby": "^3.0.0",
+        "mdast": "^2.0.0",
+        "mdast-util-to-nlcst": "^1.0.0",
+        "meow": "^3.3.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.5.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.4.2",
+        "browserify": "^12.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0",
+        "nyc": "^3.2.2"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "nyc ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js *.md !example.md --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "64e6ae7a0f35b09eabad987f63c496fa42edb3a9",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.5.0",
+      "_shasum": "c57f6d5f44159f85f4bff46412c32902abd9b50f",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "c57f6d5f44159f85f4bff46412c32902abd9b50f",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "alex",
+      "version": "1.6.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "glob": "^6.0.1",
+        "globby": "^4.0.0",
+        "mdast": "^2.0.0",
+        "mdast-util-to-nlcst": "^1.0.0",
+        "meow": "^3.3.0",
+        "minimatch": "^3.0.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.5.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-find-down": "^1.0.0",
+        "vfile-find-up": "^1.0.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.5.0",
+        "browserify": "^12.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0",
+        "nyc": "^3.2.2"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "nyc ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js . --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "82cf85ad7cfc1517c81c54e3218717dec4aecd53",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.6.0",
+      "_shasum": "92ff4a6c41ec106faff57010307f9a51b4780c9c",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "92ff4a6c41ec106faff57010307f9a51b4780c9c",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.6.1": {
+      "name": "alex",
+      "version": "1.6.1",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "glob": "^6.0.1",
+        "globby": "^4.0.0",
+        "mdast": "^2.0.0",
+        "mdast-util-to-nlcst": "^1.0.0",
+        "meow": "^3.3.0",
+        "minimatch": "^3.0.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^1.5.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.5.0",
+        "vfile": "^1.1.0",
+        "vfile-find-down": "^1.0.0",
+        "vfile-find-up": "^1.0.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.5.0",
+        "browserify": "^12.0.1",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "mdast-comment-config": "^1.0.0",
+        "mdast-github": "^1.0.0",
+        "mdast-lint": "^1.0.0",
+        "mdast-toc": "^1.0.0",
+        "mdast-validate-links": "^1.0.0",
+        "nyc": "^3.2.2"
+      },
+      "scripts": {
+        "test-api": "ava",
+        "test-coverage": "nyc ava",
+        "test-travis": "npm run test-coverage",
+        "test": "npm run test-api",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js . --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "make": "npm run lint && npm run test-coverage",
+        "bundle": "browserify index.js -s alex > alex.js",
+        "postbundle": "esmangle alex.js > alex.min.js",
+        "build-md": "mdast . --quiet",
+        "build": "npm run bundle && npm run build-md"
+      },
+      "gitHead": "82750d9295282d5911f2755c8f7a6357ab939479",
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "https://github.com/wooorm/alex#readme",
+      "_id": "alex@1.6.1",
+      "_shasum": "dd166233bcfd8d45436a9259ae52c8b9ba69c27a",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "dd166233bcfd8d45436a9259ae52c8b9ba69c27a",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-1.6.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "alex",
+      "version": "2.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "glob": "^6.0.1",
+        "globby": "^4.0.0",
+        "meow": "^3.3.0",
+        "minimatch": "^3.0.0",
+        "remark": "^3.0.0",
+        "remark-message-control": "^1.0.1",
+        "remark-retext": "^1.1.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^2.0.0",
+        "retext-profanities": "^1.0.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.6.0",
+        "vfile": "^1.1.0",
+        "vfile-find-down": "^1.0.0",
+        "vfile-find-up": "^1.0.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.11.0",
+        "browserify": "^13.0.0",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "remark-comment-config": "^2.0.0",
+        "remark-github": "^4.0.0",
+        "remark-lint": "^2.0.0",
+        "remark-toc": "^2.0.0",
+        "remark-validate-links": "^2.0.0",
+        "nyc": "^5.5.0"
+      },
+      "scripts": {
+        "build-md": "remark . --quiet --frail",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js . --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "test-api": "ava",
+        "test-coverage": "nyc ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "gitHead": "e78d9c3a5c3de670688e63a87c058c11a164819f",
+      "_id": "alex@2.0.0",
+      "_shasum": "3772deb06fa4940fb58f3d2bc7393fa8c9c711a7",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "3772deb06fa4940fb58f3d2bc7393fa8c9c711a7",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/alex-2.0.0.tgz_1454529817756_0.646822469541803"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "alex",
+      "version": "2.0.1",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "glob": "^6.0.1",
+        "globby": "^4.0.0",
+        "meow": "^3.3.0",
+        "minimatch": "^3.0.0",
+        "remark": "^3.0.0",
+        "remark-message-control": "^1.0.1",
+        "remark-retext": "^1.1.0",
+        "retext": "^1.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^2.0.0",
+        "retext-profanities": "^1.0.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.6.0",
+        "vfile": "^1.1.0",
+        "vfile-find-down": "^1.0.0",
+        "vfile-find-up": "^1.0.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.11.0",
+        "browserify": "^13.0.0",
+        "eslint": "^1.0.0",
+        "esmangle": "^1.0.1",
+        "jscs": "^2.0.0",
+        "jscs-jsdoc": "^1.0.0",
+        "remark-comment-config": "^2.0.0",
+        "remark-github": "^4.0.0",
+        "remark-lint": "^2.0.0",
+        "remark-toc": "^2.0.0",
+        "remark-validate-links": "^2.0.0",
+        "nyc": "^5.5.0"
+      },
+      "scripts": {
+        "build-md": "remark . --quiet --frail",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js . --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "test-api": "ava",
+        "test-coverage": "nyc ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "gitHead": "fe844b3448e201757427e2a1179c7c88c4f551f7",
+      "_id": "alex@2.0.1",
+      "_shasum": "2a9e8567e6bad74244757da9c20979c979072562",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "2a9e8567e6bad74244757da9c20979c979072562",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/alex-2.0.1.tgz_1455020870349_0.6986916763707995"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "alex",
+      "version": "3.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "glob": "^7.0.0",
+        "globby": "^4.0.0",
+        "meow": "^3.3.0",
+        "minimatch": "^3.0.0",
+        "remark": "^4.0.0",
+        "remark-message-control": "^2.0.0",
+        "remark-retext": "^1.1.0",
+        "retext": "^2.0.0",
+        "retext-english": "^1.0.0",
+        "retext-equality": "^2.3.0",
+        "retext-profanities": "^2.0.0",
+        "to-vfile": "^1.0.0",
+        "update-notifier": "^0.7.0",
+        "vfile": "^1.1.0",
+        "vfile-find-down": "^1.0.0",
+        "vfile-find-up": "^1.0.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.14.0",
+        "browserify": "^13.0.0",
+        "eslint": "^2.0.0",
+        "esmangle": "^1.0.1",
+        "jscs": "^3.0.0",
+        "jscs-jsdoc": "^2.0.0",
+        "remark-comment-config": "^3.0.0",
+        "remark-github": "^4.0.1",
+        "remark-lint": "^3.0.0",
+        "remark-toc": "^3.0.0",
+        "remark-validate-links": "^3.0.0",
+        "nyc": "^6.0.0"
+      },
+      "scripts": {
+        "build-md": "remark . --quiet --frail",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js . --why",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "test-api": "ava",
+        "test-coverage": "nyc ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "gitHead": "ce8f7c9e8018397af80101051a5c4cfd8b2d5014",
+      "_id": "alex@3.0.0",
+      "_shasum": "c64908738ead241f27825754ed4e0337833d3139",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "c64908738ead241f27825754ed4e0337833d3139",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/alex-3.0.0.tgz_1463591681634_0.5828749015927315"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "alex",
+      "version": "3.1.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "bail": "^1.0.0",
+        "get-stdin": "^5.0.0",
+        "glob": "^7.0.0",
+        "globby": "^5.0.0",
+        "meow": "^3.3.0",
+        "minimatch": "^3.0.0",
+        "remark-message-control": "^2.0.0",
+        "remark-parse": "^1.0.0",
+        "remark-retext": "^2.0.0",
+        "retext-english": "^2.0.0",
+        "retext-equality": "^2.3.0",
+        "retext-profanities": "^3.0.0",
+        "to-vfile": "^1.0.0",
+        "unified": "^4.1.2",
+        "update-notifier": "^1.0.0",
+        "vfile": "^1.1.0",
+        "vfile-find-down": "^1.0.0",
+        "vfile-find-up": "^1.0.0",
+        "vfile-reporter": "^1.2.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.15.0",
+        "browserify": "^13.0.0",
+        "eslint": "^2.0.0",
+        "esmangle": "^1.0.1",
+        "jscs": "^3.0.0",
+        "jscs-jsdoc": "^2.0.0",
+        "remark-cli": "^1.0.0",
+        "remark-comment-config": "^4.0.0",
+        "remark-github": "^5.0.0",
+        "remark-lint": "^4.0.0",
+        "remark-toc": "^3.0.0",
+        "remark-validate-links": "^4.0.0",
+        "nyc": "^6.0.0"
+      },
+      "scripts": {
+        "build-md": "remark . --quiet --frail",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint-api": "eslint .",
+        "lint-style": "jscs --reporter inline .",
+        "lint-text": "./cli.js . --why --quiet",
+        "lint": "npm run lint-api && npm run lint-style && npm run lint-text",
+        "test-api": "ava",
+        "test-coverage": "nyc ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "gitHead": "43c81de1e59001ad333b5c5b8310521b81a0f4b1",
+      "_id": "alex@3.1.0",
+      "_shasum": "b67ef2d4ccff23bb6fb037c4f689d27d5bec6181",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "b67ef2d4ccff23bb6fb037c4f689d27d5bec6181",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-3.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/alex-3.1.0.tgz_1466699920481_0.031812177039682865"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "alex",
+      "version": "4.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "filter.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "meow": "^3.3.0",
+        "remark-message-control": "^2.0.0",
+        "remark-parse": "^2.0.0",
+        "remark-retext": "^2.0.0",
+        "retext-english": "^2.0.0",
+        "retext-equality": "^2.3.0",
+        "retext-profanities": "^3.0.0",
+        "unified": "^5.0.0",
+        "unified-diff": "^1.0.0",
+        "unified-engine": "^2.0.0",
+        "update-notifier": "^1.0.0",
+        "vfile": "^2.0.0",
+        "vfile-reporter": "^3.0.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "browserify": "^13.0.0",
+        "esmangle": "^1.0.1",
+        "execa": "^0.4.0",
+        "nyc": "^8.0.0",
+        "remark-cli": "^2.0.0",
+        "remark-preset-wooorm": "^1.0.0",
+        "xo": "^0.16.0"
+      },
+      "scripts": {
+        "build-md": "remark . --quiet --frail",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint": "xo",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "xo": {
+        "space": true,
+        "rules": {
+          "max-lines": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "output": true,
+        "presets": "wooorm"
+      },
+      "gitHead": "b5eb3ad2c8e9ffd61405abeb267b68b94246058d",
+      "_id": "alex@4.0.0",
+      "_shasum": "895e2f2cf93af93976ae643fb0202ca85e7d778b",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "895e2f2cf93af93976ae643fb0202ca85e7d778b",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/alex-4.0.0.tgz_1473802050770_0.8150126291438937"
+      },
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "alex",
+      "version": "4.0.1",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "filter.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "meow": "^3.3.0",
+        "remark-message-control": "^2.0.0",
+        "remark-parse": "^2.0.0",
+        "remark-retext": "^2.0.0",
+        "retext-english": "^2.0.0",
+        "retext-equality": "^2.3.0",
+        "retext-profanities": "^3.0.0",
+        "unified": "^5.0.0",
+        "unified-diff": "^1.0.0",
+        "unified-engine": "^2.0.0",
+        "update-notifier": "^1.0.0",
+        "vfile": "^2.0.0",
+        "vfile-reporter": "^3.0.0",
+        "vfile-sort": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "browserify": "^13.0.0",
+        "esmangle": "^1.0.1",
+        "execa": "^0.4.0",
+        "nyc": "^8.0.0",
+        "remark-cli": "^2.0.0",
+        "remark-preset-wooorm": "^1.0.0",
+        "xo": "^0.16.0"
+      },
+      "scripts": {
+        "build-md": "remark . --quiet --frail",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint": "xo",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "xo": {
+        "space": true,
+        "rules": {
+          "max-lines": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "output": true,
+        "presets": "wooorm"
+      },
+      "gitHead": "d8ddfe78e06efeb575cee53c10a5d98b7938aa01",
+      "_id": "alex@4.0.1",
+      "_shasum": "f0af78aad0d1a02e1cc9c0c030af321593f20041",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "f0af78aad0d1a02e1cc9c0c030af321593f20041",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/alex-4.0.1.tgz_1474134457354_0.11828014114871621"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "alex",
+      "version": "4.1.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "filter.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "meow": "^3.3.0",
+        "remark-message-control": "^4.0.0",
+        "remark-parse": "^3.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "^3.0.0",
+        "retext-profanities": "^4.0.0",
+        "unified": "^6.1.0",
+        "unified-diff": "^1.0.0",
+        "unified-engine": "^3.1.0",
+        "update-notifier": "^2.1.0",
+        "vfile": "^2.0.0",
+        "vfile-reporter": "^3.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "browserify": "^14.0.0",
+        "esmangle": "^1.0.1",
+        "execa": "^0.6.0",
+        "nyc": "^10.1.0",
+        "remark-cli": "^3.0.0",
+        "remark-preset-wooorm": "^2.0.0",
+        "xo": "^0.18.1"
+      },
+      "scripts": {
+        "build-md": "remark . -qfo",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint": "xo",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "xo": {
+        "space": true,
+        "esnext": false,
+        "rules": {
+          "ava/prefer-async-await": "off",
+          "max-lines": "off",
+          "capitalized-comments": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "d9dee360dd8495c121727ae3b71f9dcdbeb8ec9b",
+      "_id": "alex@4.1.0",
+      "_shasum": "6c55580bb72d323d89e594681465f446cbbf1370",
+      "_from": ".",
+      "_npmVersion": "4.0.3",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "shasum": "6c55580bb72d323d89e594681465f446cbbf1370",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-4.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/alex-4.1.0.tgz_1493753260738_0.5046160421334207"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "alex",
+      "version": "5.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "filter.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "meow": "^3.3.0",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^4.0.0",
+        "remark-parse": "^4.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~3.2.0",
+        "retext-profanities": "~4.3.0",
+        "unified": "^6.1.0",
+        "unified-diff": "^1.0.0",
+        "unified-engine": "^4.0.0",
+        "update-notifier": "^2.1.0",
+        "vfile": "^2.0.0",
+        "vfile-reporter": "^4.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.22.0",
+        "browserify": "^14.0.0",
+        "esmangle": "^1.0.1",
+        "execa": "^0.8.0",
+        "nyc": "^11.0.0",
+        "remark-cli": "^4.0.0",
+        "remark-preset-wooorm": "^3.0.0",
+        "xo": "^0.18.1"
+      },
+      "scripts": {
+        "build-md": "remark . -qfo",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint": "xo",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "xo": {
+        "space": true,
+        "esnext": false,
+        "rules": {
+          "ava/prefer-async-await": "off",
+          "max-lines": "off",
+          "capitalized-comments": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "b8a3447bf7108647a61cb3e83407d01ff36ee436",
+      "_id": "alex@5.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Wmx+paMPz1qiz2lXz6/rbgG918hcQLBVLuEMZmBRThvsfvEXNYm0oUAtJ4pW3H3RYJOG2jPTXgrAu81xo+z/jw==",
+        "shasum": "e4271080b31fb9303fb52fb4df2125f836627df5",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex-5.0.0.tgz_1504197817760_0.03451355057768524"
+      },
+      "directories": {}
+    },
+    "5.1.0": {
+      "name": "alex",
+      "version": "5.1.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "filter.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "meow": "^3.3.0",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^4.0.0",
+        "remark-parse": "^4.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~3.2.0",
+        "retext-profanities": "~4.4.0",
+        "unified": "^6.1.0",
+        "unified-diff": "^1.0.0",
+        "unified-engine": "^4.0.0",
+        "update-notifier": "^2.1.0",
+        "vfile": "^2.0.0",
+        "vfile-reporter": "^4.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.23.0",
+        "browserify": "^14.0.0",
+        "esmangle": "^1.0.1",
+        "execa": "^0.8.0",
+        "nyc": "^11.0.0",
+        "remark-cli": "^4.0.0",
+        "remark-preset-wooorm": "^3.0.0",
+        "xo": "^0.18.1"
+      },
+      "scripts": {
+        "build-md": "remark . -qfo",
+        "build-bundle": "browserify index.js -s alex > alex.js",
+        "build-mangle": "esmangle alex.js > alex.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint": "xo",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run build && npm run lint && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "xo": {
+        "space": true,
+        "esnext": false,
+        "rules": {
+          "ava/prefer-async-await": "off",
+          "max-lines": "off",
+          "capitalized-comments": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "3b43146df6a2b787f9199da5323a8612bf6ec087",
+      "_id": "alex@5.1.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ouNJOHx7KKNwFsmX3WWXo8c2RTrsyhcX5QlFb6IM/cHCy9IkHr1k833jiIhcbwkUeGgACI2BJtp9LLvnFjbhbA==",
+        "shasum": "9da0d5d84ea72ec7e3ff0443cb84b2fb5a8bcf87",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-5.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex-5.1.0.tgz_1510150146642_0.40685471147298813"
+      },
+      "directories": {}
+    },
+    "6.0.0": {
+      "name": "alex",
+      "version": "6.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wooorm/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wooorm/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js",
+        "filter.js",
+        "cli.js"
+      ],
+      "dependencies": {
+        "meow": "^5.0.0",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^4.0.0",
+        "remark-parse": "^5.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~3.4.0",
+        "retext-profanities": "~4.4.0",
+        "unified": "^7.0.0",
+        "unified-diff": "^2.0.0",
+        "unified-engine": "^6.0.0",
+        "update-notifier": "^2.1.0",
+        "vfile": "^3.0.0",
+        "vfile-reporter": "^5.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "browserify": "^16.0.0",
+        "execa": "^0.11.0",
+        "nyc": "^12.0.0",
+        "prettier": "^1.13.7",
+        "remark-cli": "^5.0.0",
+        "remark-preset-wooorm": "^4.0.0",
+        "tinyify": "^2.4.3",
+        "xo": "^0.22.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+        "build-bundle": "browserify . -s alex > alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify > alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/prefer-async-await": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "e00b3d4c65b40bb67fa7e10b36333adbbb6055f9",
+      "_id": "alex@6.0.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xL2KUDqq40tqJ7KGymgtNKwjotmRE9dPt2SBYsFOOFp7rLz4/Ld597ROnfxwDwL1mmRlsUfvqERz0M4Qz0H1aA==",
+        "shasum": "4aae37299e31a029c614991a22a20e53d535c8a1",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-6.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 20239,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbglzGCRA9TVsSAnZWagAAzikP/RCoNkLqDLQsC92keTMF\nJADek1qEdkmpRm0ygkefgAGcUyiYpsc1pPpdtEGPbmEhVSQKMno6gT23v0pt\njJ7hKG27SmAeUkRHc0LUaYR2obr0HsFTmfSYnkjKid7RnHQyoT+aps3lKgwa\nDTYnQNx4nPUtjfzN4kqbqvX0P8YiedWRbBZGN0AobuSV7nG/l39Fwt+uAY0E\nzVlOyLUSAMwBSX6S3tFVshTN4S1Mem6lN1KirjDqILX2YpM6E7lHz5Hzkyzy\nLRhlkHJ7UOI91H1ckBfUZ7xWtzgtMf1bMvD0kaZklb7xKX/vaywgEvuPPCr4\n/FwZdKIG4fHFamKMsHU2JWMC5ToZRLqcNu8xUHjerR4iOF/vehQ787f4buax\niLgv3So+tu2CSzNn/ySA6oQTptUNHH+MJffsz6VQK/VzTc8tIlOCl5oGCwNd\nh/kNKeko9zcnVdNmVFqeey5T3LaBYugwTOEkaURSn3FwraZPP01iVoLg1Vbo\nd4d5C+iIZlieCqnvIYIJpgyE8D1hQBS5TyBerMZBrbHnrVhO5+0tWrhazeHA\nJrukPxBVzChaIIIX2M+F5BFS6uMey0KzTuQMV8MIA+SPCpha2ZnjDoxqrOV6\nTO3zHKKGYcd8rrV3hu9YwhLD5FZOB53R/+OS7quwKqhe2/eBkPPcXFbyYPdW\ngNPd\r\n=FgwF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_6.0.0_1535270086096_0.1301907811293712"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "alex",
+      "version": "7.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {
+        "meow": "^5.0.0",
+        "rehype-parse": "^6.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^4.0.0",
+        "remark-parse": "^6.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~3.7.0",
+        "retext-profanities": "~4.6.0",
+        "unified": "^7.0.0",
+        "unified-diff": "^2.0.0",
+        "unified-engine": "^6.0.0",
+        "update-notifier": "^2.1.0",
+        "vfile": "^3.0.0",
+        "vfile-reporter": "^5.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "browserify": "^16.0.0",
+        "execa": "^1.0.0",
+        "nyc": "^13.0.0",
+        "prettier": "^1.13.7",
+        "remark-cli": "^6.0.0",
+        "remark-preset-wooorm": "^4.0.0",
+        "tinyify": "^2.4.3",
+        "xo": "^0.23.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+        "build-bundle": "browserify . -s alex > alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify > alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/prefer-async-await": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "8dd29a5c2518a824e774a49cb6d1ba4e98a88b23",
+      "_id": "alex@7.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-vrjVpT5u0gdvuOvZiqWq/cQCKdx+hzzuYE61DeQMVZScbna7xk0CT92rkBWeUxdIkhHyWVXMacMA4dvvpOH6tw==",
+        "shasum": "33e3d9ee60149ec481d21d923e3c58bf5e7f33dd",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-7.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 22557,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcDjduCRA9TVsSAnZWagAAk1QP/1vtOdTC7TdR1IHHhg07\n+Z+4ctQLHW4vOp928FACbrUnDZ1+lgsyhQaRl/86tctzyY+uwTxObgS1F7xf\nu9mGx8ElhQ/J3yw0s1OvHliVapIrc9mQHEapf0Fnw56uAXI8B5IMVQW8YefN\nEHkrUiIH6JXfRC+KdlxmKJeJESatOKzYrU9dT6FjZMRj5XVUWvqw87hLOaHg\nanp2Qctp2KbhpucaJThItvY6EDdXSIRAhij/DpMaFnH8g45RMDFCaavoNYEi\nZV5O9FKzLUjrgYT3VL87yLn52HSh9nelzKt+FqI495C8UVn8EIFynGdi9MmS\nNVHVjntqNz3nug3cmIrqwT4lAlNCA54bW2XOEDP0Zf94dtwUpA5HjZwO7LrB\nF2vzjy4e58wLJG1gx27TFUtoxzLtrGkd2LFESMatPcSqNUwVgANXGjShkuPl\nfmCS3T0FZMV4yc1rNiVrCoeMsYGaPM1wqsPnorR5rGEIA4GxfgR5fv5S7aEQ\n3YR2S8Iz1xD0NwK4KzoUddriloyNtSA/WtXzPWvSn3oQ/+P7HMTdDKWwRR4r\nz4b8WmzMnJk1Q4MOcYFxLaVhSD1ZC1uTAXd9Izt+XoBValN82fPzPZu7A3Ee\n/8f8c1hwqsrqskJYIkhYbvEikpuctAI/ne+zVSq6n931ApW0HOPv6ex9V+7W\n9IOF\r\n=GenT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_7.0.0_1544435565169_0.8656052467782624"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "alex",
+      "version": "7.1.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "homepage": "http://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {
+        "meow": "^5.0.0",
+        "rehype-parse": "^6.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^4.0.0",
+        "remark-parse": "^6.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~3.8.0",
+        "retext-profanities": "~4.6.0",
+        "unified": "^7.0.0",
+        "unified-diff": "^2.0.0",
+        "unified-engine": "^6.0.0",
+        "update-notifier": "^2.1.0",
+        "vfile": "^3.0.0",
+        "vfile-reporter": "^5.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.0",
+        "browserify": "^16.0.0",
+        "execa": "^1.0.0",
+        "nyc": "^13.0.0",
+        "prettier": "^1.13.7",
+        "remark-cli": "^6.0.0",
+        "remark-preset-wooorm": "^4.0.0",
+        "tinyify": "^2.4.3",
+        "xo": "^0.23.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+        "build-bundle": "browserify . -s alex > alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify > alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/prefer-async-await": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "4b9a763735b230c5a312afe9427cd87131bbc17d",
+      "_id": "alex@7.1.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6lFIfuUiZkshwmCfho9YUY+/FNyQd8FxTFO1cLAJC/VBmTfPE0UysRfnuskd9Do4N2CA8MYNEI84Mi+iNPlkug==",
+        "shasum": "e93b28cbf543369a7b9c983c75ac70e0318ea174",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-7.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 24728,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcNLyqCRA9TVsSAnZWagAA2E4P/39f/bXMzRiXZwVu1Y5q\nNs9PzeJSIoNCvo7WMsQ6yjyAytUmicDzlUicBoYK4rkhLxd4pKSN7ss+DYDE\nWxTqBsfn5x/gU8UVJ9Q7vUViWmKqoRRRcPZygljPHtdRwBVOm/Mpib36IXUW\nXY5jtCklNayTa53JJH8RAFK0q39E3xPdYWeYGJvMk0BNY63+4crgEv7q77+4\nrOIw0nxwvWeVwwahQwC/7sq8/b4r46LFmciGx1V1YmUsCXhZzVQIqx0Sy89z\n6CuIXB9YjJOZZAZFP5oVcionCxNHoeCoWCwpNuusfg6w8MMOz3vT9aIq4hUB\nv2us3nEplkVggyryoOqDXPocvauqVdr2sqKEp16LLHUEnKl4i8u7XdKRPYNa\nPsWzlgPWxiXaLWlyAcBH8YLRcZAJQ8zKf5ASI0uV+j2CVnBzeHHSgehgJbDD\nVqZlMpztoK8MhYgj0PhIQuGZV7pLLxMAlpIUCyT+Iz2drvYmDe8+5Rjy+B0o\nobqTL0a6C6QUsbLHNs4ce1yH+Sqkb8lfV7L6ltvrvX+/2SmGUNXO9exve2J2\nlbDs7H6GEaaMoxgrkvrI+Z6yC15xLEqVR3GGBiYuaH1EMP3OO/tyTVn95/+2\njh8WopYPbQ0pJnatn/aZHPmw2V/nYpOKrc5eQAMl2HycqjppPiksenzNjzah\nEDDG\r\n=9xs1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_7.1.0_1546960041259_0.8500824303280323"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.0": {
+      "name": "alex",
+      "version": "8.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^5.0.0",
+        "rehype-parse": "^6.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^5.0.0",
+        "remark-parse": "^7.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~4.2.0",
+        "retext-profanities": "~5.0.0",
+        "unified": "^8.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^7.0.0",
+        "update-notifier": "^3.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "browserify": "^16.0.0",
+        "execa": "^2.0.0",
+        "nyc": "^14.0.0",
+        "prettier": "^1.0.0",
+        "remark-cli": "^7.0.0",
+        "remark-preset-wooorm": "^6.0.0",
+        "tinyify": "^2.0.0",
+        "xo": "^0.25.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify -o alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "1411b1dd862e45ed8a4094c2451c2946c6abeeaa",
+      "_id": "alex@8.0.0",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-E2XUxYvzLGWa7LsWN1qgQlJ3FdS/szAL6AIc5ZjfxTM/D1/gxKHraLxUZPT3S7zWgMDSOKc6xW/kKddDOJipXw==",
+        "shasum": "39422b53e19fb93be9fd8d94e87a5a958dae45d5",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-8.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 27109,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdl3HXCRA9TVsSAnZWagAAdRUP/0USMWFvgC/TQnOfCBRX\nt/57aEJ03ZRSZwk9OO88GDzbvBRo2/CJX8wP449hdZfcUto4nzCFaf446XJD\nNFte48V2A0Ogc2k/zdbBY5WE6mJ2rSjCfJ+Lfy6l9OqiDJT2x3DhQJ6Jp0ej\nRl0cZQuBT1h4ubOi70Fvq8Ko71I9pPCC0g5JLEoq9ioEjuuMFAldurFUtwzr\nsXkNaF5NTm5Rw3btaNhdOXoZag97uvmVKYjyx6S3zKuoemL7bXszW3OqgGfs\nevd26O0/QoNnxzsYOZG8uE0q0CZt4GRGqaF1nDsLet0fXFcaWl6gDEsqMQRV\nFNYX6pFbd446CCeajzZGmUbI7qaLE3JhKiAJWmuYbATC3x2212MK1q5QreHd\n9n0IUAp/aqASUdP6ioRsUxLW9KDQ6pPkUFO7A57NKnnQFcDnD85DnnR2IWDt\n3rGgettBIW/lYdIc5X2Q+49C7FCqTZM7BKfibzn/7CGtD1ZjoYply/yZsXaz\nFfsFrMIsoTzEDPvpo0X/4thh5KgwDuGKJXWdS8vdZOqBcxweHM9TMoDPVC6M\nPajqg44aKwqbnFFk7qwHjuoKA/MV/XIZZIvijgHlwI5CsFTAhZ4VmXJyl61+\n8IphX1IbLDDPtWNP5LjxW2Id8Et+wqCQvvBA28oLbl9TO/xdaDJzZPwCiiPQ\nb5FP\r\n=umo0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_8.0.0_1570206166294_0.567445998633926"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.1": {
+      "name": "alex",
+      "version": "8.0.1",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^5.0.0",
+        "rehype-parse": "^6.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^5.0.0",
+        "remark-parse": "^7.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~4.2.0",
+        "retext-profanities": "~5.0.0",
+        "unified": "^8.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^7.0.0",
+        "update-notifier": "^3.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "browserify": "^16.0.0",
+        "execa": "^3.0.0",
+        "nyc": "^14.0.0",
+        "prettier": "^1.0.0",
+        "remark-cli": "^7.0.0",
+        "remark-preset-wooorm": "^6.0.0",
+        "tinyify": "^2.0.0",
+        "xo": "^0.25.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify -o alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "98798bd43369a373e273eddac59887ae45a95f9a",
+      "_id": "alex@8.0.1",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.0",
+      "dist": {
+        "integrity": "sha512-xOPwPXpHGZw9AGPqc5ezLZby2NJd1Tj8fS9M07nMxEnUHShM95raQu6fVztYjeyAswvZqfirNUiTluBi/r1TQg==",
+        "shasum": "aa692ebaf520cc1fc2b1b1ed3484851385369d06",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-8.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 27354,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyvD7CRA9TVsSAnZWagAA1xoP/3ap356/kojpoEWw9aR8\n4i5kXtR44w1mWaf4t/YFq80lN95Wmmvnsn5U7vaAv7DOCDHfs5uw7Hw8oy8Y\nmjoofVqDdoYGGZ6mCCNVfVE5R/QI9613osaEqMkQtS4lWG4ppDATnQ9hIwGU\nxekpWhC9Fp14DF8Ht8EAAM4QgfSvUQPynavOJF83TOXv9EBo3Qg7roocHNg6\ndb9fw+3zWOC8g+LZM2m82sGJVyBWyVT/XIaC0ElSfDtiPEkMXZB78D0L3gRa\nVNd8Ofbh3pWl8bZGmffnCBQedMigdWicUeIsKAtVTQvFD/U02uzLbB+Y05+R\nO0H83kE8lyzcYn50pJuPAdnYTjZ3FXtY4vNfkNqoeqX3o6arACTNRUWeP/Ox\nD8+/CwQoZvJ1D43opTUlh/sd4ASLexJVW+8G1K9EfXwUbJRt3UOMuGcBCr3I\nllJmpBhvBDGleO1KUZf8+LNG8EkBnBWuWADQMQ8lFwscySI+U+QFzS6bbxaJ\nuv88CIXOcIbUTYyc6rlOdyE7Zt2soY+2aYpk3tqo0oKiM0xCKgAD+sKbuur9\naSUJ8xLbl+4l2hiQXO0zIlD//UYmXCJCrQoQuRi2VY8yqrv5LAS3ZSXwmd3k\nuLL5Oj2lUPJxzYkw3UsPT4Hkz+F8REmmJhvZsW4oPtrw2d4W5HvbbncUd7eo\n475L\r\n=mJya\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_8.0.1_1573581050647_0.1027622287355725"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.1.0": {
+      "name": "alex",
+      "version": "8.1.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^5.0.0",
+        "rehype-parse": "^6.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^5.0.0",
+        "remark-parse": "^7.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~4.3.0",
+        "retext-profanities": "~5.0.0",
+        "unified": "^8.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^7.0.0",
+        "update-notifier": "^3.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "browserify": "^16.0.0",
+        "execa": "^3.0.0",
+        "nyc": "^14.0.0",
+        "prettier": "^1.0.0",
+        "remark-cli": "^7.0.0",
+        "remark-preset-wooorm": "^6.0.0",
+        "tinyify": "^2.0.0",
+        "xo": "^0.25.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify -o alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "ava",
+        "test-coverage": "nyc --reporter lcov ava",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm"
+        ]
+      },
+      "gitHead": "8ab860fea401a99e9636b2f7bcaeadccca0a4777",
+      "_id": "alex@8.1.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-k4uSG3M7wm4y8OlZoKEEmeLnGPMla658tLUCCqW1e8kDyMyVB3qEoCwWKM6HkCuNe1JbUlEWzpycQbG4+7Onfw==",
+        "shasum": "0f9999a0289d53c774515ed5fb25aefe6216dcd6",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-8.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 27438,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd5DYlCRA9TVsSAnZWagAAE9MP/jWWWsMG7WI2OaVKHray\nVh4PtblZTZQU+P+0wZuV9S12rGv6R3Q2kCndmEUx2JcN3O5H6WEJ1oOUGeO+\nWljpNF1R2yj3BaDv31YZUbYlroVXoxwBTjW2+NPxahnoPBYaAHFrd86pRQyo\nVc+RjpUxmBt168sxVpTH8+J6AjKRaDnEqul2eMZrPnn6vsk+JdsdW7poVC5x\noYqtN0A3E6so4AKsQBOIgMV4h+zl8Pax9kOUVmcVpqQI+XKzn6nwAWFQNz48\nbXAi/cVC/oaJRM5loSzlpWRGerzdnCCQdQLLoTY/DBD1et4QMdgw5VVPtHaU\njV+V2r7N1wLodYWaZDEIBRcmGR1/Us5OYKHuryIEhJrsIm4ZvKzoY+RFeo7U\nDluSXesmV4KAtASfLcEZhCuiuHPKtOAPIBUJQ+RGHt+pm7fv0fSWhIE6b6Za\ncrKyp1OHHrKX5beMUiqsplCP7gnkd3XVn9g2sntU6H2nQhcqC0IZDFQrzyoK\nzlnqjPzOAgZoL21CrZBG7MoCHbqzPENMkUaEHJJbjYGYqJG1P8FzRz40sJul\nWIysrWVjVIe03glmxK1LLFS1/5HhKBDlCrd3qLK+Mn6o2fYn/8rH5JqsbyNC\nUAXZ7MtkvGH6DDj8wbzxNfMV286hr/V8IUWH6QYxfb1+CoIl9enoIaEhIf82\niPZI\r\n=0dIn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_8.1.0_1575237156387_0.5791715648811233"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.1.1": {
+      "name": "alex",
+      "version": "8.1.1",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^5.0.0",
+        "rehype-parse": "^6.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^5.0.0",
+        "remark-parse": "^7.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~4.3.0",
+        "retext-profanities": "~5.0.0",
+        "unified": "^8.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^7.0.0",
+        "update-notifier": "^3.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^16.0.0",
+        "nyc": "^15.0.0",
+        "prettier": "^1.0.0",
+        "remark-cli": "^7.0.0",
+        "remark-preset-wooorm": "^6.0.0",
+        "tape": "^4.0.0",
+        "tinyify": "^2.0.0",
+        "xo": "^0.25.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify -o alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "node test",
+        "test-coverage": "nyc --reporter lcov tape test/index.js",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/no-import-test-files": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm",
+          [
+            "toc",
+            {
+              "heading": "contents"
+            }
+          ]
+        ]
+      },
+      "gitHead": "fde1c9a02d2ea48e5cb874f05c4dd04a1d3ffe8e",
+      "_id": "alex@8.1.1",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-WH3BEF0fr+Pj7N8caH6Y+DInOUIB2VnRyT8UJ/39cmHivCu6raX++d0ZcYwbD/ONLTWU+VMAiQjCYaNywIZAjw==",
+        "shasum": "361bc91f1d8e540c4441937e0f40de6303cbf064",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-8.1.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 27548,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeKuQoCRA9TVsSAnZWagAATdYQAJFkR7hZSM8TrRa9DNCZ\n88v7rqcYavI7NGDkV35vibxNnqIi7cSvCSlg5E1QWJ3b/TYABqsEGpt5VlKe\nIr8QMxuXRlwVejyLkt+PfMV9umo9zmyCoRE9RMKxyEB8CekoBsaxwIZdzN/+\nHnC8ftZzSZaop09gncYN+GFiI5ek7GAee5wgj0pNjAGTv7Gg+d6YgE0Q89fW\nN9h2xa7O+ed7O2BKtDoZBgXlw4SUwTiJabuo8H6lhWcH6EKSB3CEIGDs99Fg\n7sHWG8QdwgjbXG7CEKcJd9xFzARluCpVh4yVn4uB/n2ceMmC5ryeR84R1++I\nteap9iw74ao6KMJ9hxXEXehoRONPh1VJF/nFAFOjCuiKPiY3f389DTy7Os3a\neC4cNq+o0VttSiO3SLh/QaWtEjKLlBIXSWR1SKvq5KJc9vfrmzmyyxNYSwLp\nvtUNJorrbubuWmjCMx06IgfJ4jyOUiQBtDs5wQ8SBcUIMuIRp6nlzhiMzJBO\nl2SzPIJ9n5HPNF4/LYNd4EcXHvwtZgq4nppTblA1VR0EEwhRL+nX7cBNTsG/\nAK3EAy2oaNPJLzQIWtJfcT35MWrnopMm/tfoLihA+cikMojX5GFrqEasGBCv\nxbBzhuxLgcraQE/Qg3Byk+L8zv9zLi0lDO3hN84dwgm7hqb/g17emboYkSal\nYO86\r\n=BMvr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_8.1.1_1579869223454_0.3374754419964978"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.2.0": {
+      "name": "alex",
+      "version": "8.2.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^7.0.0",
+        "rehype-parse": "^6.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^1.1.0",
+        "remark-message-control": "^5.0.0",
+        "remark-parse": "^7.0.0",
+        "remark-retext": "^3.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~4.3.0",
+        "retext-profanities": "~5.0.0",
+        "unified": "^8.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^7.0.0",
+        "update-notifier": "^3.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^16.0.0",
+        "nyc": "^15.0.0",
+        "prettier": "^1.0.0",
+        "remark-cli": "^7.0.0",
+        "remark-preset-wooorm": "^6.0.0",
+        "tape": "^4.0.0",
+        "tinyify": "^2.0.0",
+        "xo": "^0.25.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify -o alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "node test",
+        "test-coverage": "nyc --reporter lcov tape test/index.js",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/no-import-test-files": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm",
+          [
+            "toc",
+            {
+              "heading": "contents"
+            }
+          ]
+        ]
+      },
+      "gitHead": "59878f2250587e66844936b69dbae74b4c79cab1",
+      "_id": "alex@8.2.0",
+      "_nodeVersion": "14.0.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-aJX/ZkyGruiXKr26NJkbrYd+Quc8i0cP7B7b9TIX2AoLxHsV+0SJ0ca+26h8sw63LyrWQMkT7lZQlvMMOBKxqA==",
+        "shasum": "d14c0598a855605cc88635623111f54b087432aa",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-8.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 27976,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfGqcCCRA9TVsSAnZWagAAGEUP/0DKi8pSCOh7MFsJ3VVh\namcr1AxaaLDBwueetpOXzcWXjF0Xou/MTC5dn4is2juFwY74pJw2/79Fc6t8\nk9b6NO70fsgrv7qBlWde+cpb1+hxlUyVc0sSDjjRIJjB54bzHC+S8iqutc0z\nTFA1ffFjX4w6+dB6AhXvFYeTE0h/rNhgHas7lpm9fKoTe0wSYBKhuAKzaEP8\nlKdiuH4UcVLWArXmlCFmaLfDc+Qm/dVif03qlCeYZJnm5oK4ysSj4mItaRRD\nEaHAYkBTOpEzzihY7FFptEIbnapt/60lKNE2mO62Mp9WphqzctJhMJCH1Tl/\n8/c4WQde/t1Jk6rKb4R5uOxsoeOddWGYWjFaJzsOozKxAOAmDqvll5TLLNRa\nwCLPuwiJh8clM7gvykQP0FhtyiwkodWDteCDRa3yQfBYqlYsEzUcpTOsz+qa\n+1Qan4z6CMD4ryE2bT1EMGy2EDn1mAvc8ToPIMTDHhK66W4sKNZtIxUiuDEx\ncOwmEop3V6zsxSgjpq6TJzTteu+gKwsjonTc9vxOubqrDeVJ7WWIpjxGqEvb\nk3WHsq9rIbhGRnR56Wy0rn0yE5ZsroMWJJr6lppubK0BDTz3DQ+Gb2se//hD\nHFMZIm+Yp+dD8ImDuIS1JJotOWERVG58JnUeJTqCEDASWPLJzk7FsBjITiaS\n74xy\r\n=6P4H\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_8.2.0_1595582209739_0.7921854676267175"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.0.0": {
+      "name": "alex",
+      "version": "9.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "F",
+          "email": "f@erbridge.co.uk"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Mary McGrath",
+          "email": "m.c.mcgrath13@gmail.com"
+        },
+        {
+          "name": "Nick Radford",
+          "email": "nick@nicholasradford.com"
+        },
+        {
+          "name": "Ricky",
+          "email": "rickhanlonii@gmail.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Taylor Reece",
+          "email": "taylor.reece@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Daan",
+          "email": "daan@devign.it"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^7.0.0",
+        "rehype-parse": "^7.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^2.0.0",
+        "remark-mdx": "^2.0.0-next.7",
+        "remark-message-control": "^6.0.0",
+        "remark-parse": "^8.0.0",
+        "remark-retext": "^4.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~5.2.0",
+        "retext-profanities": "~6.1.0",
+        "unified": "^9.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^8.0.0",
+        "update-notifier": "^4.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^16.0.0",
+        "nyc": "^15.0.0",
+        "prettier": "^2.0.0",
+        "remark-cli": "^8.0.0",
+        "remark-preset-wooorm": "^7.0.0",
+        "tape": "^5.0.0",
+        "tinyify": "^3.0.0",
+        "xo": "^0.32.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier . --write && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify -o alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "node test",
+        "test-coverage": "nyc --reporter lcov tape test/index.js",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/no-import-test-files": "off",
+          "unicorn/no-fn-reference-in-iterator": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm",
+          [
+            "toc",
+            {
+              "heading": "contents"
+            }
+          ]
+        ]
+      },
+      "gitHead": "fa1f391dec9beb2f7c5ba8c70704da72477bd336",
+      "_id": "alex@9.0.0",
+      "_nodeVersion": "14.7.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-RGYRecINaLwOOjSWhFK9onWeWd4W3xTMu7plsXdUEVsqGtUO8OMYbA7OTME9CqTmTCpDGsxN2sVfuSCOMicyJQ==",
+        "shasum": "f1af36119f6edd6e434968e97179948743b296dd",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-9.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 29951,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfQmAlCRA9TVsSAnZWagAAVRcP/RDnaBT41JeczUJt6zOt\nWy6CDtSKwAPRrVGOIMguT205TPLwj7GDqcLK6k2LZ5z1UBrxwc8oBdf/NQTQ\nztPs1mrl49noQ1VShmjP5d1g0Q+s+6zPD6sxxVJ55D6mEEVVoYcCesMxAFUk\ndxHMV9iJUE05DbJmtOI8AfsahMBukY0+mN/eX9gTW836D+hBJC28O5ODq/ar\n3xGRzaCBWZ+HbRKpDYA4R7FQ/OTqci+byYhkZEAXcR5CZCvLrw1E+1PQwVNp\n2xm2k+FFwFF1xnd5QOoikZL45bPUhmDTDGKsB5HqkJwVzMEeFjivx0vdGNgD\nAZ2OgcnXeCDslSotOTG3Qk5kXDKcGm+G77xRjg/euRCZW/Uzmm07EgXHZSw/\n/e5Tj/QMLB98zcuJBTaIgxkagKsvmImkIv4fW4BoCnbMSL0CfkjVItP6pi0D\nTyAaC719DXtPxF1IyiBg5RQq+lz6neXdbAFjH1bD7V3ntLHFf/LxntFNaFlm\nVeZjl4DC4GGfLginHNm6/J6qeo+dPm5nuGzZqFR+v1RYIsPofeW37YBddq7v\npz64+gJLTWxUun/DJY81PmSigvwctaANkoNiWDripEIlIC5JDc4vkYc6Yk0l\ny4l/gmzxBCUn406t3iSaVZD0V22WKoXMaL2+pMIVoqo9K1AassckYFV+BnxK\nCAiG\r\n=H83V\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_9.0.0_1598185508929_0.3467167143490584"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.0.1": {
+      "name": "alex",
+      "version": "9.0.1",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "F",
+          "email": "f@erbridge.co.uk"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Mary McGrath",
+          "email": "m.c.mcgrath13@gmail.com"
+        },
+        {
+          "name": "Nick Radford",
+          "email": "nick@nicholasradford.com"
+        },
+        {
+          "name": "Ricky",
+          "email": "rickhanlonii@gmail.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Taylor Reece",
+          "email": "taylor.reece@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Daan",
+          "email": "daan@devign.it"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^7.0.0",
+        "rehype-parse": "^7.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^2.0.0",
+        "remark-mdx": "^2.0.0-next.7",
+        "remark-message-control": "^6.0.0",
+        "remark-parse": "^8.0.0",
+        "remark-retext": "^4.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~5.2.0",
+        "retext-profanities": "~6.1.0",
+        "unified": "^9.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^8.0.0",
+        "update-notifier": "^4.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^16.0.0",
+        "nyc": "^15.0.0",
+        "prettier": "^2.0.0",
+        "remark-cli": "^8.0.0",
+        "remark-preset-wooorm": "^7.0.0",
+        "tape": "^5.0.0",
+        "tinyify": "^3.0.0",
+        "xo": "^0.32.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier . --write && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -p tinyify -o alex.min.js",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "node test",
+        "test-coverage": "nyc --reporter lcov tape test/index.js",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/no-import-test-files": "off",
+          "unicorn/no-fn-reference-in-iterator": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm",
+          [
+            "toc",
+            {
+              "heading": "contents"
+            }
+          ]
+        ]
+      },
+      "gitHead": "bb0b693a2d791cd8cabdbbf65fa4f4468d125ded",
+      "_id": "alex@9.0.1",
+      "_nodeVersion": "14.7.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-q560b+fVMXvu3WVkvoYBUGRHRXo9K9P/Fnt6Xcq1VhZow9MNqoQ5x7OJTYzSStAElaGxaJ7djTef9pJrM3GBXg==",
+        "shasum": "3948ae3512182c86bd36ad99b0166f90c1f758f6",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-9.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 29972,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfQnxRCRA9TVsSAnZWagAAXiwP/RAbmMGfzBNvNJGWJFSH\nvNg0r0w+3nYCzffBvAxEBLt7nSumTHqHhdtoxuIsAC+RmKEQm71eEwJqiJu4\n2b53EUH4s8uS/VN/A6V/LySGDfSzNuNO9gQ7CMnDBLFqHRYW3s/ibAXHNtoY\n4HPWSgWr7sW55hFvW3No1C7/VaKvvncfcv6GPXlA7EGL6NRenN8xzSZfXZqt\ncVx4yoWl6FJ2STZlF+Nmt7mITnZNOcmJ6KJoovPQhEuxaDb+bAA0A7RXAHOO\nqwRktbPcB9pK2ArJDSTjn/Wq9+jGBbGCPWq2Lc5E7t2nVqSu/Ig/0Bj9MCOp\nRimytcY/mNFUBYy2gCWboAmr1pTqELMtLTFO2htsIme26ufDIXXH38QoVyUn\nSpMNgvtn+zG2QZBKeMmrRvFFC830VnxdGIlp0q7ux1sfTEJeYGgE5gQGd+Mo\nDcxCpGFztGV7Ob1WmyZpo/FJpIYGp4pe3gOIzJ7e2z/4VarYMN0QMfW1Xxn1\n2QIzX/uS186LZXr/Xr25nyA//IZuLKqrumWpnbf2Bb7B2nPUWVWSlYwfQiVD\nJvR7QJ8IG4P0sTP/Xi47G0xJPSzWuF3Htfr2Kzc/8+wFuPBWG3IGmx9Obdns\nSwigTXKwNnK4/vJPo7xEuIDlvOclFNWKWGRA/MPU1Pw8K9GKN0Yh+cYIykS+\nPiq/\r\n=Mep7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_9.0.1_1598192721153_0.3088715890647409"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.1.0": {
+      "name": "alex",
+      "version": "9.1.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "F",
+          "email": "f@erbridge.co.uk"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Mary McGrath",
+          "email": "m.c.mcgrath13@gmail.com"
+        },
+        {
+          "name": "Nick Radford",
+          "email": "nick@nicholasradford.com"
+        },
+        {
+          "name": "Ricky",
+          "email": "rickhanlonii@gmail.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Taylor Reece",
+          "email": "taylor.reece@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Daan",
+          "email": "daan@devign.it"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^7.0.0",
+        "rehype-parse": "^7.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^2.0.0",
+        "remark-mdx": "^2.0.0-next.7",
+        "remark-message-control": "^6.0.0",
+        "remark-parse": "^8.0.0",
+        "remark-retext": "^4.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~5.5.0",
+        "retext-profanities": "~6.1.0",
+        "unified": "^9.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^8.0.0",
+        "update-notifier": "^4.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^17.0.0",
+        "nyc": "^15.0.0",
+        "prettier": "^2.0.0",
+        "remark-cli": "^9.0.0",
+        "remark-preset-wooorm": "^8.0.0",
+        "tape": "^5.0.0",
+        "tinyify": "^3.0.0",
+        "vfile-reporter-json": "^2.0.0",
+        "xo": "^0.34.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -o alex.min.js -p tinyify",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "node test",
+        "test-coverage": "nyc --reporter lcov tape test/index.js",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/no-import-test-files": "off",
+          "unicorn/no-fn-reference-in-iterator": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm",
+          [
+            "toc",
+            {
+              "heading": "contents"
+            }
+          ]
+        ]
+      },
+      "gitHead": "bf843bc1f309d00eb01633f29851e063119e65fe",
+      "_id": "alex@9.1.0",
+      "_nodeVersion": "15.1.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-mlNQ0CBGinzZj1pjiXaSLsihjZ4Kzq0U0EjR+DrZ3IQQfM4pf4OtxHI1agBIiEwv0tQUzimjgTk+5t9iHeT7Vw==",
+        "shasum": "bc54b305c3e05d87085cca3af4376314be0dbeee",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-9.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 32740,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfrnEGCRA9TVsSAnZWagAAnxAP/1t+HTZuN83mJGD9Kj0y\ngiu9pCki/Kb5FWfms8DOXfEfwndOO+0apmwuC7WZOBGNHBbsx6UxkKNOOm6L\nF+Bw6ogJjFB1DsH3sglJD/CT/YMGs2nw6Ak1nZixdn3VBjXD+KZjDhddod4T\nnTKbNWSrFW4FU1r1mBklGLmZROX5sZ6cKZQRuemVxD4eh5mk0eKd//Q3sDY7\nnDAWnAnm6WvD3tP2gcCCkPKbis3nLMjq8F7Hxyj6cbiPMOTqroebYTcfkdaY\nyJbOgPrh3i1iVbYSgOkHcQeJkxHZsk1nZbIJ+A/qxjRCbnkeToFHfewJnGgC\npIwRf8g6PI8HebPCLlalrkjtz1xHRICGT5tiduuajzp8z/tNI1a/E+b3mFXA\n+bpxj1xkQmz6af/y0fIHH312bzluQS8Cpt/zf35imMMsBA04vfZU10cku+Tr\nD7Y/3Yls2w6yFSsOtjpuYzYGcn5AF4Qx6pH1bB//Y0W31E9Z6gip+AtJF01i\n2wsqdvS8OqTvPkExrGMAASLSqgCB5PSLTM9OLNa4YfzbNPhxOkMuStAh3MWw\nKpDpHg+ITyvBwltj7wXv5QcYGjvtnvw3J0YNprEkSPTkKcq9sYe+CQ9O1v7+\n0B/98B6WahdRqujsV88pMzq8umjijSrsAPRFb42t5BawEBAsJPrVwqLUfSA7\n9XPg\r\n=pdH1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_9.1.0_1605267717754_0.34328925291237034"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.1.1": {
+      "name": "alex",
+      "version": "9.1.1",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "F",
+          "email": "f@erbridge.co.uk"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Mary McGrath",
+          "email": "m.c.mcgrath13@gmail.com"
+        },
+        {
+          "name": "Nick Radford",
+          "email": "nick@nicholasradford.com"
+        },
+        {
+          "name": "Ricky",
+          "email": "rickhanlonii@gmail.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Taylor Reece",
+          "email": "taylor.reece@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Daan",
+          "email": "daan@devign.it"
+        }
+      ],
+      "bin": {
+        "alex": "cli.js"
+      },
+      "dependencies": {
+        "meow": "^7.0.0",
+        "rehype-parse": "^7.0.0",
+        "rehype-retext": "^2.0.1",
+        "remark-frontmatter": "^2.0.0",
+        "remark-mdx": "2.0.0-next.7",
+        "remark-message-control": "^6.0.0",
+        "remark-parse": "^8.0.0",
+        "remark-retext": "^4.0.0",
+        "retext-english": "^3.0.0",
+        "retext-equality": "~5.5.0",
+        "retext-profanities": "~6.1.0",
+        "unified": "^9.0.0",
+        "unified-diff": "^3.0.0",
+        "unified-engine": "^8.0.0",
+        "update-notifier": "^4.0.0",
+        "vfile": "^4.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-sort": "^2.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^17.0.0",
+        "nyc": "^15.0.0",
+        "prettier": "^2.0.0",
+        "remark-cli": "^9.0.0",
+        "remark-preset-wooorm": "^8.0.0",
+        "tape": "^5.0.0",
+        "tinyify": "^3.0.0",
+        "vfile-reporter-json": "^2.0.0",
+        "xo": "^0.38.0"
+      },
+      "scripts": {
+        "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+        "build-bundle": "browserify . -s alex -o alex.js",
+        "build-mangle": "browserify . -s alex -o alex.min.js -p tinyify",
+        "build": "npm run build-bundle && npm run build-mangle",
+        "test-api": "node test",
+        "test-coverage": "nyc --reporter lcov tape test/index.js",
+        "test": "npm run format && npm run build && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "esnext": false,
+        "rules": {
+          "ava/no-import-test-files": "off",
+          "unicorn/no-array-callback-reference": "off"
+        },
+        "ignores": [
+          "alex.js"
+        ]
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm",
+          [
+            "toc",
+            {
+              "heading": "contents"
+            }
+          ]
+        ]
+      },
+      "gitHead": "b44f13351eac9dbf19ee8d2fcd1552c71b2d10e0",
+      "_id": "alex@9.1.1",
+      "_nodeVersion": "16.9.0",
+      "_npmVersion": "7.23.0",
+      "dist": {
+        "integrity": "sha512-2mYyFfQnzWzDd6lSACRePBj8YP6fzzvclPkfGfYrY6vPNFDoQKrCAAdF0XCKROGJGnbSWX1K5PrxixVTaV5ODw==",
+        "shasum": "063819cb01b8f81a25588af89523ca289dadaa07",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-9.1.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 32749
+      },
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_9.1.1_1634735417355_0.3899934968226533"
+      },
+      "_hasShrinkwrap": false
+    },
+    "10.0.0": {
+      "name": "alex",
+      "version": "10.0.0",
+      "description": "Catch insensitive, inconsiderate writing",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/get-alex/alex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/get-alex/alex/issues"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "homepage": "https://alexjs.com",
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "alex",
+        "equal",
+        "race",
+        "religion",
+        "sex",
+        "orientation",
+        "identity",
+        "gender",
+        "sensitive",
+        "insensitive",
+        "neutral",
+        "writing",
+        "language",
+        "english"
+      ],
+      "author": {
+        "name": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "url": "http://wooorm.com"
+      },
+      "contributors": [
+        {
+          "name": "Titus Wormer",
+          "email": "tituswormer@gmail.com",
+          "url": "http://wooorm.com"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Carolyn Stransky",
+          "email": "carolynstransky@gmail.com"
+        },
+        {
+          "name": "Riley Martine",
+          "email": "riley.martine@protonmail.com"
+        },
+        {
+          "name": "F",
+          "email": "f@erbridge.co.uk"
+        },
+        {
+          "name": "Jen Weber",
+          "email": "j@jenweber.me"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Lee Mulvey",
+          "email": "lmulvey@me.com"
+        },
+        {
+          "name": "Mary McGrath",
+          "email": "m.c.mcgrath13@gmail.com"
+        },
+        {
+          "name": "Nick Radford",
+          "email": "nick@nicholasradford.com"
+        },
+        {
+          "name": "Ricky",
+          "email": "rickhanlonii@gmail.com"
+        },
+        {
+          "name": "Sachin Malhotra",
+          "email": "sachinmalhotra1993@gmail.com"
+        },
+        {
+          "name": "Simon Knott",
+          "email": "simoknott@gmail.com"
+        },
+        {
+          "name": "Taylor Reece",
+          "email": "taylor.reece@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim@itspugle.com"
+        },
+        {
+          "name": "Vaishnavi Janardhan",
+          "email": "vaish.janardhan@gmail.com"
+        },
+        {
+          "name": "Conor Hastings",
+          "email": "conor@socialtables.com"
+        },
+        {
+          "name": "Abhinav Gautam",
+          "email": "abhinav.nanhey@gmail.com"
+        },
+        {
+          "name": "Alex Gleason",
+          "email": "alex@alexgleason.me"
+        },
+        {
+          "name": "Ansel Halliburton",
+          "email": "github@anseljh.com"
+        },
+        {
+          "name": "Ben Junya",
+          "email": "bjunya@gmail.com"
+        },
+        {
+          "name": "Christian Oliff",
+          "email": "christianoliff@yahoo.com"
+        },
+        {
+          "name": "Daan",
+          "email": "daan@devign.it"
+        }
+      ],
+      "type": "module",
+      "sideEffects": false,
+      "bin": {
+        "alex": "cli.js"
+      },
+      "types": "index.d.ts",
+      "dependencies": {
+        "@types/mdast": "^3.0.0",
+        "@types/nlcst": "^1.0.0",
+        "meow": "^10.0.0",
+        "rehype-parse": "^8.0.0",
+        "rehype-retext": "^3.0.0",
+        "remark-frontmatter": "^4.0.0",
+        "remark-gfm": "^3.0.0",
+        "remark-mdx": "2.0.0-rc.1",
+        "remark-message-control": "^7.0.0",
+        "remark-parse": "^10.0.0",
+        "remark-retext": "^5.0.0",
+        "retext-english": "^4.0.0",
+        "retext-equality": "~6.3.0",
+        "retext-profanities": "~7.1.0",
+        "unified": "^10.0.0",
+        "unified-diff": "^4.0.0",
+        "unified-engine": "^9.0.0",
+        "update-notifier": "^5.0.0",
+        "vfile": "^5.0.0",
+        "vfile-reporter": "^7.0.0",
+        "vfile-sort": "^3.0.0"
+      },
+      "devDependencies": {
+        "@types/tape": "^4.0.0",
+        "@types/update-notifier": "^5.0.0",
+        "c8": "^7.10.0",
+        "prettier": "^2.0.0",
+        "remark-cli": "^10.0.0",
+        "remark-preset-wooorm": "^9.0.0",
+        "rimraf": "^3.0.0",
+        "tape": "^5.0.0",
+        "type-coverage": "^2.0.0",
+        "type-fest": "^2.0.0",
+        "typescript": "^4.0.0",
+        "vfile-reporter-json": "^3.0.0",
+        "xo": "^0.45.0"
+      },
+      "scripts": {
+        "build": "rimraf \"test/**/*.d.ts\" \"*.d.ts\" && tsc && type-coverage",
+        "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+        "test-api": "node test/index.js",
+        "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov npm run test-api",
+        "test": "npm run build && npm run format && npm run test-coverage"
+      },
+      "alex": {
+        "allow": [
+          "butt"
+        ]
+      },
+      "prettier": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "semi": false,
+        "trailingComma": "none"
+      },
+      "xo": {
+        "prettier": true,
+        "rules": {
+          "ava/no-import-test-files": "off",
+          "unicorn/no-array-callback-reference": "off"
+        }
+      },
+      "remarkConfig": {
+        "plugins": [
+          "preset-wooorm",
+          [
+            "toc",
+            {
+              "heading": "contents"
+            }
+          ]
+        ]
+      },
+      "typeCoverage": {
+        "atLeast": 100,
+        "detail": true,
+        "strict": true,
+        "ignoreCatch": true
+      },
+      "gitHead": "ff7e86fe9af59ab79d618516053cd0faa490ce1b",
+      "_id": "alex@10.0.0",
+      "_nodeVersion": "16.9.0",
+      "_npmVersion": "7.23.0",
+      "dist": {
+        "integrity": "sha512-yTKA5M514WOTpZZkK6pusBbtvVbNTavKS3nI4Z9ceH7RdNGII9S8p8mrcA38S8T0QGxp+EK3l/61XLBj0LTdhQ==",
+        "shasum": "600bb55f99537d1f25595130194223f3c7df61fb",
+        "tarball": "https://registry.npmjs.org/alex/-/alex-10.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37809
+      },
+      "_npmUser": {
+        "name": "wooorm",
+        "email": "tituswormer@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "wooorm",
+          "email": "tituswormer@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/alex_10.0.0_1634743894888_0.9612417271918818"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "<!--lint disable no-html first-heading-level no-shell-dollars-->\n\n<h1 align=\"center\">\n  <img width=\"300\" src=\"https://raw.githubusercontent.com/get-alex/alex/a192b46/media/logo-alex-purple.svg?sanitize=true\" alt=\"alex\">\n  <br>\n  <br>\n</h1>\n\n> 📝 **alex** — Catch insensitive, inconsiderate writing.\n\n[![Build][build-badge]][build]\n[![Coverage][coverage-badge]][coverage]\n[![First timers friendly][first-timers-badge]][first-timers]\n\nWhether your own or someone else’s writing, **alex** helps you find gender\nfavoring, polarizing, race related, religion inconsiderate, or other **unequal**\nphrasing in text.\n\nFor example, when `We’ve confirmed his identity` is given, **alex** will warn\nyou and suggest using `their` instead of `his`.\n\nGive **alex** a spin on the [Online demo »][demo].\n\n## Why\n\n*   [x] Helps to get better at considerate writing\n*   [x] Catches many possible offences\n*   [x] Suggests helpful alternatives\n*   [x] Reads plain text, HTML, MDX, or markdown as input\n*   [x] Stylish\n\n## Install\n\nUsing [npm][] (with [Node.js][node]):\n\n```sh\n$ npm install alex --global\n```\n\nUsing [yarn][]:\n\n```sh\n$ yarn global add alex\n```\n\nOr you can follow this step-by-step tutorial:\n[Setting up alex in your project][setup-tutorial]\n\n<!--alex disable wacko stupid-->\n\n## Contents\n\n*   [Checks](#checks)\n*   [Integrations](#integrations)\n*   [Ignoring files](#ignoring-files)\n    *   [`.alexignore`](#alexignore)\n*   [Control](#control)\n*   [Configuration](#configuration)\n*   [CLI](#cli)\n*   [API](#api)\n    *   [`markdown(value, config)`](#markdownvalue-config)\n    *   [`mdx(value, config)`](#mdxvalue-config)\n    *   [`html(value, config)`](#htmlvalue-config)\n    *   [`text(value, config)`](#textvalue-config)\n*   [Workflow](#workflow)\n*   [FAQ](#faq)\n    *   [This is stupid!](#this-is-stupid)\n    *   [alex didn’t check “X”!](#alex-didnt-check-x)\n    *   [Why is this named alex?](#why-is-this-named-alex)\n*   [Further reading](#further-reading)\n*   [Contribute](#contribute)\n*   [Origin story](#origin-story)\n*   [Acknowledgments](#acknowledgments)\n*   [License](#license)\n\n## Checks\n\n**alex** checks things such as:\n\n*   Gendered work-titles (if you write `garbageman` alex suggests `garbage\n    collector`; if you write `landlord` alex suggests `proprietor`)\n*   Gendered proverbs (if you write `like a man` alex suggests `bravely`; if you\n    write `ladylike` alex suggests `courteous`)\n*   Ableist language (if you write `learning disabled` alex suggests `person\n    with learning disabilities`)\n*   Condescending language (if you write `obviously` or `everyone knows` alex\n    warns about it)\n*   Intolerant phrasing (if you write `master` and `slave` alex suggests\n    `primary` and `replica`)\n*   Profanities (if you write `butt` 🍑 alex warns about it)\n\n…and much more!\n\nNote: alex assumes good intent: that you don’t mean to offend!\n\nSee [`retext-equality`][equality] and [`retext-profanities`][profanities] for\nall rules.\n\n**alex** ignores words meant literally, so `“he”`, `He — ...`, and [the\nlike][literals] are not warned about.\n\n## Integrations\n\n*   Atom — [`get-alex/atom-linter-alex`](https://github.com/get-alex/atom-linter-alex)\n*   Sublime — [`sindresorhus/SublimeLinter-contrib-alex`](https://github.com/sindresorhus/SublimeLinter-contrib-alex)\n*   Gulp — [`dustinspecker/gulp-alex`](https://github.com/dustinspecker/gulp-alex)\n*   Slack — [`keoghpe/alex-slack`](https://github.com/keoghpe/alex-slack)\n*   Ember — [`yohanmishkin/ember-cli-alex`](https://github.com/yohanmishkin/ember-cli-alex)\n*   Probot — [`swinton/linter-alex`](https://github.com/swinton/linter-alex)\n*   GitHub Actions — [`brown-ccv/alex-recommends`](https://github.com/marketplace/actions/alex-recommends)\n*   GitHub Actions (reviewdog) — [`reviewdog/action-alex`](https://github.com/marketplace/actions/run-alex-with-reviewdog)\n*   Vim — [`w0rp/ale`](https://github.com/w0rp/ale)\n*   Browser extension — [`skn0tt/alex-browser-extension`](https://github.com/skn0tt/alex-browser-extension)\n*   Contentful - [`stefanjudis/alex-js-contentful-ui-extension`](https://github.com/stefanjudis/alex-js-contentful-ui-extension)\n*   Figma - [`nickradford/figma-plugin-alex`](https://github.com/nickradford/figma-plugin-alex)\n*   VSCode - [`tlahmann/vscode-alex`](https://github.com/tlahmann/vscode-alex)\n\n## Ignoring files\n\nThe CLI searches for files with a markdown or text extension when given\ndirectories (so `$ alex .` will find `readme.md` and `path/to/file.txt`).\nTo prevent files from being found, create an [`.alexignore`][alexignore] file.\n\n### `.alexignore`\n\nThe CLI will sometimes [search for files][ignoring-files].\nTo prevent files from being found, add a file named `.alexignore` in one of the\ndirectories above the current working directory (the place you run `alex` from).\nThe format of these files is similar to [`.eslintignore`][eslintignore] (which\nin turn is similar to `.gitignore` files).\n\nFor example, when working in `~/path/to/place`, the ignore file can be in\n`to`, `place`, or `~`.\n\nThe ignore file for [this project itself][.alexignore] looks like this:\n\n```txt\n# `node_modules` is ignored by default.\nexample.md\n```\n\n## Control\n\nSometimes **alex** makes mistakes:\n\n```markdown\nA message for this sentence will pop up.\n```\n\nYields:\n\n```txt\nreadme.md\n  1:15-1:18  warning  `pop` may be insensitive, use `parent` instead  dad-mom  retext-equality\n\n⚠ 1 warning\n```\n\nHTML comments in Markdown can be used to ignore them:\n\n```markdown\n<!--alex ignore dad-mom-->\n\nA message for this sentence will **not** pop up.\n```\n\nYields:\n\n```txt\nreadme.md: no issues found\n```\n\n`ignore` turns off messages for the thing after the comment (in this case, the\nparagraph).\nIt’s also possible to turn off messages after a comment by using `disable`, and,\nturn those messages back on using `enable`:\n\n```markdown\n<!--alex disable dad-mom-->\n\nA message for this sentence will **not** pop up.\n\nA message for this sentence will also **not** pop up.\n\nYet another sentence where a message will **not** pop up.\n\n<!--alex enable dad-mom-->\n\nA message for this sentence will pop up.\n```\n\nYields:\n\n```txt\nreadme.md\n  9:15-9:18  warning  `pop` may be insensitive, use `parent` instead  dad-mom  retext-equality\n\n⚠ 1 warning\n```\n\nMultiple messages can be controlled in one go:\n\n```md\n<!--alex disable he-her his-hers dad-mom-->\n```\n\n…and all messages can be controlled by omitting all rule identifiers:\n\n```md\n<!--alex ignore-->\n```\n\n## Configuration\n\nYou can control **alex** through `.alexrc` configuration files:\n\n```json\n{\n  \"allow\": [\"boogeyman-boogeywoman\"]\n}\n```\n\n…you can use YAML if the file is named `.alexrc.yml` or `.alexrc.yaml`:\n\n```yml\nallow:\n  - dad-mom\n```\n\n…you can also use JavaScript if the file is named `.alexrc.js`:\n\n```js\n// But making it random like this is a bad idea!\nexports.profanitySureness = Math.floor(Math.random() * 3)\n```\n\n…and finally it is possible to use an `alex` field in `package.json`:\n\n```txt\n{\n  …\n  \"alex\": {\n    \"noBinary\": true\n  },\n  …\n}\n```\n\nThe `allow` field should be an array of rules or `undefined` (the default is\n`undefined`).  When provided, the rules specified are skipped and not reported.\n\nThe `deny` field should be an array of rules or `undefined` (the default is\n`undefined`).  When provided, *only* the rules specified are reported.\n\nYou cannot use both `allow` and `deny` at the same time.\n\nThe `noBinary` field should be a boolean (the default is `false`).\nWhen turned on (`true`), pairs such as `he and she` and `garbageman or\ngarbagewoman` are seen as errors.\nWhen turned off (`false`, the default), such pairs are okay.\n\nThe `profanitySureness` field is a number (the default is `0`).\nWe use [`cuss`][cuss], which has a dictionary of words that have a rating\nbetween 0 and 2 of how likely it is that a word or phrase is a profanity (not\nhow “bad” it is):\n\n| Rating | Use as a profanity | Use in clean text | Example  |\n| ------ | ------------------ | ----------------- | -------- |\n| 2      | likely             | unlikely          | `asshat` |\n| 1      | maybe              | maybe             | `addict` |\n| 0      | unlikely           | likely            | `beaver` |\n\nThe `profanitySureness` field is the minimum rating (including) that you want to\ncheck for.\nIf you set it to `1` (maybe) then it will warn for level `1` *and* `2` (likely)\nprofanities, but not for level `0` (unlikely).\n\n## CLI\n\n<!--alex enable wacko stupid-->\n\n![][screenshot]\n\nLet’s say `example.md` looks as follows:\n\n```markdown\nThe boogeyman wrote all changes to the **master server**. Thus, the slaves\nwere read-only copies of master. But not to worry, he was a cripple.\n```\n\nNow, run **alex** on `example.md`:\n\n```sh\n$ alex example.md\n```\n\nYields:\n\n```txt\nexample.md\n   1:5-1:14  warning  `boogeyman` may be insensitive, use `boogeymonster` instead                boogeyman-boogeywoman  retext-equality\n  1:42-1:48  warning  `master` / `slaves` may be insensitive, use `primary` / `replica` instead  master-slave           retext-equality\n  1:69-1:75  warning  Don’t use `slaves`, it’s profane                                           slaves                 retext-profanities\n  2:52-2:54  warning  `he` may be insensitive, use `they`, `it` instead                          he-she                 retext-equality\n  2:61-2:68  warning  `cripple` may be insensitive, use `person with a limp` instead             gimp                   retext-equality\n\n⚠ 5 warnings\n```\n\nSee `$ alex --help` for more information.\n\n> When no input files are given to **alex**, it searches for files in the\n> current directory, `doc`, and `docs`.\n> If `--mdx` is given, it searches for `mdx` extensions.\n> If `--html` is given, it searches for `htm` and `html` extensions.\n> Otherwise, it searches for `txt`, `text`, `md`, `mkd`, `mkdn`, `mkdown`,\n> `ron`, and `markdown` extensions.\n\n## API\n\nThis package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):\nNode 12+ is needed to use it and it must be `import`ed instead of `require`d.\n\n[npm][]:\n\n```sh\n$ npm install alex --save\n```\n\nThis package exports the identifiers `markdown`, `mdx`, `html`, and `text`.\nThe default export is `markdown`.\n\n### `markdown(value, config)`\n\nCheck Markdown (ignoring syntax).\n\n###### Parameters\n\n*   `value` ([`VFile`][vfile] or `string`) — Markdown document\n*   `config` (`Object`, optional) — See the [Configuration][] section\n\n###### Returns\n\n[`VFile`][vfile].\nYou are probably interested in its [`messages`][vfile-message] property, as\nshown in the example below, because it holds the possible violations.\n\n###### Example\n\n```js\nimport alex from 'alex'\n\nalex('We’ve confirmed his identity.').messages\n```\n\nYields:\n\n```js\n[\n  [1:17-1:20: `his` may be insensitive, when referring to a person, use `their`, `theirs`, `them` instead] {\n    message: '`his` may be insensitive, when referring to a ' +\n      'person, use `their`, `theirs`, `them` instead',\n    name: '1:17-1:20',\n    reason: '`his` may be insensitive, when referring to a ' +\n      'person, use `their`, `theirs`, `them` instead',\n    line: 1,\n    column: 17,\n    location: { start: [Object], end: [Object] },\n    source: 'retext-equality',\n    ruleId: 'her-him',\n    fatal: false,\n    actual: 'his',\n    expected: [ 'their', 'theirs', 'them' ]\n  }\n]\n```\n\n### `mdx(value, config)`\n\nCheck [MDX][] (ignoring syntax).\n\n> Note: the syntax for [MDX@2][mdx-next], while currently in beta, is used in\n> alex.\n\n###### Parameters\n\n*   `value` ([`VFile`][vfile] or `string`) — MDX document\n*   `config` (`Object`, optional) — See the [Configuration][] section\n\n###### Returns\n\n[`VFile`][vfile].\n\n###### Example\n\n```js\nimport {mdx} from 'alex'\n\nmdx('<Component>He walked to class.</Component>').messages\n```\n\nYields:\n\n```js\n[\n  [1:12-1:14: `He` may be insensitive, use `They`, `It` instead] {\n    reason: '`He` may be insensitive, use `They`, `It` instead',\n    line: 1,\n    column: 12,\n    location: { start: [Object], end: [Object] },\n    source: 'retext-equality',\n    ruleId: 'he-she',\n    fatal: false,\n    actual: 'He',\n    expected: [ 'They', 'It' ]\n  }\n]\n```\n\n### `html(value, config)`\n\nCheck HTML (ignoring syntax).\n\n###### Parameters\n\n*   `value` ([`VFile`][vfile] or `string`) — HTML document\n*   `config` (`Object`, optional) — See the [Configuration][] section\n\n###### Returns\n\n[`VFile`][vfile].\n\n###### Example\n\n```js\nimport {html} from 'alex'\n\nhtml('<p class=\"black\">He walked to class.</p>').messages\n```\n\nYields:\n\n```js\n[\n  [1:18-1:20: `He` may be insensitive, use `They`, `It` instead] {\n    message: '`He` may be insensitive, use `They`, `It` instead',\n    name: '1:18-1:20',\n    reason: '`He` may be insensitive, use `They`, `It` instead',\n    line: 1,\n    column: 18,\n    location: { start: [Object], end: [Object] },\n    source: 'retext-equality',\n    ruleId: 'he-she',\n    fatal: false,\n    actual: 'He',\n    expected: [ 'They', 'It' ]\n  }\n]\n```\n\n### `text(value, config)`\n\nCheck plain text (as in, syntax is checked).\n\n###### Parameters\n\n*   `value` ([`VFile`][vfile] or `string`) — Text document\n*   `config` (`Object`, optional) — See the [Configuration][] section\n\n###### Returns\n\n[`VFile`][vfile].\n\n###### Example\n\n```js\nimport {markdown, text} from 'alex'\n\nmarkdown('The `boogeyman`.').messages // => []\n\ntext('The `boogeyman`.').messages\n```\n\nYields:\n\n```js\n[\n  [1:6-1:15: `boogeyman` may be insensitive, use `boogeymonster` instead] {\n    message: '`boogeyman` may be insensitive, use `boogeymonster` instead',\n    name: '1:6-1:15',\n    reason: '`boogeyman` may be insensitive, use `boogeymonster` instead',\n    line: 1,\n    column: 6,\n    location: Position { start: [Object], end: [Object] },\n    source: 'retext-equality',\n    ruleId: 'boogeyman-boogeywoman',\n    fatal: false,\n    actual: 'boogeyman',\n    expected: [ 'boogeymonster' ]\n  }\n]\n```\n\n## Workflow\n\nThe recommended workflow is to add **alex** to `package.json` and to run it with\nyour tests in Travis.\n\nYou can opt to ignore warnings through [alexrc][configuration] files and\n[control comments][control].\n\nA `package.json` file with [npm scripts][npm-scripts], and additionally using\n[AVA][] for unit tests, could look like so:\n\n```json\n{\n  \"scripts\": {\n    \"test-api\": \"ava\",\n    \"test-doc\": \"alex\",\n    \"test\": \"npm run test-api && npm run test-doc\"\n  },\n  \"devDependencies\": {\n    \"alex\": \"^1.0.0\",\n    \"ava\": \"^0.1.0\"\n  }\n}\n```\n\nIf you’re using Travis for continuous integration, set up something like the\nfollowing in your `.travis.yml`:\n\n```diff\n script:\n - npm test\n+- alex --diff\n```\n\nMake sure to still install alex though!\n\nIf the `--diff` flag is used, and Travis is detected, lines that are not changes\nin this push are ignored.\nUsing this workflow, you can merge PRs if it has warnings, and then if someone\nedits an entirely different file, they won’t be bothered about existing\nwarnings, only about the things they added!\n\n## FAQ\n\n<!--lint disable no-heading-punctuation-->\n\n<!--alex ignore wacko stupid-->\n\n### This is stupid!\n\nNot a question.\nAnd yeah, alex isn’t very smart.\nPeople are much better at this.\nBut people make mistakes, and alex is there to help.\n\n### alex didn’t check “X”!\n\nSee [`contributing.md`][contributing] on how to get “X” checked by alex.\n\n### Why is this named alex?\n\nIt’s a nice unisex name, it was free on npm, I like it!  :smile:\n\n<!--lint enable no-heading-punctuation-->\n\n## Further reading\n\nNo automated tool can replace studying inclusive communication and listening to\nthe lived experiences of others.\nAn error from `alex` can be an invitation to learn more.\nThese resources are a launch point for deepening your own understanding and\neditorial skills beyond what `alex` can offer:\n\n*   The [18F Content Guide](https://content-guide.18f.gov/our-style/inclusive-language/)\n    has a helpful list of links to other inclusive language guides used in\n    journalism and academic writing.\n*   The [Conscious Style Guide](https://consciousstyleguide.com/articles/) has\n    articles on many nuanced topics of language.  For example, the terms race\n    and ethnicity mean different things, and choosing the right word is up to\n    you.\n    Likewise, a sentence that overgeneralizes about a group of people\n    (e.g. “Developers love to code all day”) may not be noticed by `alex`, but\n    it is not inclusive.  A good human editor can step up to the challenge and\n    find a better way to phrase things.\n*   Sometimes, the only way to know what is inclusive is to ask.\n    In [Disability is a nuanced thing](https://incl.ca/disability-language-is-a-nuanced-thing/),\n    Nicolas Steenhout writes about how person-first language, such as\n    “a person with a disability,” is not always the right choice.\n*   Language is always evolving.  A term that is neutral one year ago can be\n    problematic today.  Projects like the\n    [Self-Defined Dictionary](https://github.com/selfdefined/web-app) aim to\n    collect the words that we use to define ourselves and others, and connect\n    them with the history and some helpful advice.\n*   Unconsious bias is present in daily decisions and conversations and can show\n    up in writing.\n    [Textio](https://textio.com/blog/4-overlooked-types-of-bias-in-business-writing/27521593662)\n\n    offers some examples of how descriptive adjective choice and tone can push\n    some people away, and how regional language differences can cause confusion.\n*   Using complex sentences and uncommon vocabulary can lead to less inclusive\n    content.  This is described as literacy exclusion in\n    [this article by Harver](https://harver.com/blog/inclusive-job-descriptions/).\n    This is critical to be aware of if your content has a global audience,\n    where a reader’s strongest language may not be the language you are writing\n    in.\n\n## Contribute\n\nSee [`contributing.md`][contributing] in [`get-alex/.github`][health] for ways\nto get started.\nSee [`support.md`][support] for ways to get help.\n\nThis project has a [Code of conduct][coc].\nBy interacting with this repository, organization, or community you agree to\nabide by its terms.\n\n## Origin story\n\nThanks to [**@iheanyi**][iheany] for [raising the problem][tweet] and\n[**@sindresorhus**][sindre] for inspiring me ([**@wooorm**][wooorm]) to do\nsomething about it.\n\nWhen alex launched, it got some traction on [twitter][] and [producthunt][].\nThen there was a [lot][tnw] [of][dailydot] [press][vice] [coverage][bustle].\n\n## Acknowledgments\n\nPreliminary work for alex was done [in 2015][preliminary].\nThe project was authored by [**@wooorm**][wooorm].\n\nLots of [people helped since][contributors]!\n\n## License\n\n[MIT][license] © [Titus Wormer][author]\n\n<!-- Definitions. -->\n\n[build]: https://github.com/get-alex/alex/actions\n\n[build-badge]: https://github.com/get-alex/alex/workflows/main/badge.svg\n\n[coverage]: https://codecov.io/github/get-alex/alex\n\n[coverage-badge]: https://img.shields.io/codecov/c/github/get-alex/alex.svg\n\n[first-timers]: https://www.firsttimersonly.com/\n\n[first-timers-badge]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg\n\n[node]: https://nodejs.org/en/download/\n\n[npm]: https://docs.npmjs.com/cli/install\n\n[yarn]: https://yarnpkg.com/\n\n[setup-tutorial]: https://dev.to/meeshkan/setting-up-the-alex-js-language-linter-in-your-project-3bpl\n\n[demo]: http://alexjs.com/#demo\n\n[screenshot]: screenshot.png\n\n[vfile]: https://github.com/vfile/vfile\n\n[profanities]: https://github.com/retextjs/retext-profanities/blob/main/rules.md\n\n[equality]: https://github.com/retextjs/retext-equality/blob/main/rules.md\n\n[vfile-message]: https://github.com/vfile/vfile#vfilemessages\n\n[literals]: https://github.com/syntax-tree/nlcst-is-literal#isliteralparent-index\n\n[eslintignore]: http://eslint.org/docs/user-guide/configuring.html#ignoring-files-and-directories\n\n[cuss]: https://github.com/words/cuss\n\n[npm-scripts]: https://docs.npmjs.com/misc/scripts\n\n[ava]: http://ava.li\n\n[author]: http://wooorm.com\n\n[health]: https://github.com/get-alex/.github\n\n[contributing]: https://github.com/get-alex/.github/blob/main/contributing.md\n\n[support]: https://github.com/get-alex/.github/blob/main/support.md\n\n[coc]: https://github.com/get-alex/.github/blob/main/code-of-conduct.md\n\n[tweet]: https://twitter.com/kwuchu/status/618799087006130176\n\n[twitter]: https://twitter.com/wooorm/status/639123753490907136\n\n[producthunt]: https://www.producthunt.com/posts/alex\n\n[tnw]: http://thenextweb.com/apps/2015/09/11/alex-stops-you-from-publishing-inconsiderate-content/\n\n[vice]: https://www.vice.com/en_us/article/nzeawx/meet-alex-the-javascript-tool-to-make-your-code-less-offensive\n\n[bustle]: https://www.bustle.com/articles/108684-alex-javascript-tool-corrects-harmful-language-in-your-writing-because-there-are-some-mistakes-spell-check\n\n[dailydot]: https://www.dailydot.com/debug/alex-coding-tool-offensive/\n\n[iheany]: https://github.com/iheanyi\n\n[sindre]: https://github.com/sindresorhus\n\n[wooorm]: https://github.com/wooorm\n\n[preliminary]: https://github.com/get-alex/alex/commit/3621b0a\n\n[contributors]: https://github.com/get-alex/alex/graphs/contributors\n\n[.alexignore]: .alexignore\n\n[license]: license\n\n[control]: #control\n\n[configuration]: #configuration\n\n[ignoring-files]: #ignoring-files\n\n[alexignore]: #alexignore\n\n[mdx]: https://mdxjs.com\n\n[mdx-next]: https://github.com/mdx-js/mdx/issues/1041\n",
+  "maintainers": [
+    {
+      "name": "wooorm",
+      "email": "tituswormer@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2021-10-20T15:31:35.095Z",
+    "created": "2015-09-02T16:38:35.911Z",
+    "1.0.0": "2015-09-02T16:38:35.911Z",
+    "1.1.0": "2015-09-07T18:21:37.373Z",
+    "1.2.0": "2015-09-18T15:21:29.293Z",
+    "1.3.0": "2015-10-07T17:53:08.779Z",
+    "1.4.0": "2015-10-11T13:03:05.422Z",
+    "1.5.0": "2015-11-09T21:24:41.689Z",
+    "1.6.0": "2015-11-19T12:21:42.017Z",
+    "1.6.1": "2015-11-19T13:37:42.348Z",
+    "2.0.0": "2016-02-03T20:03:39.015Z",
+    "2.0.1": "2016-02-09T12:27:51.796Z",
+    "3.0.0": "2016-05-18T17:14:45.428Z",
+    "3.1.0": "2016-06-23T16:38:42.927Z",
+    "4.0.0": "2016-09-13T21:27:32.612Z",
+    "4.0.1": "2016-09-17T17:47:39.258Z",
+    "4.1.0": "2017-05-02T19:27:41.503Z",
+    "5.0.0": "2017-08-31T16:43:38.772Z",
+    "5.1.0": "2017-11-08T14:09:06.763Z",
+    "6.0.0": "2018-08-26T07:54:46.182Z",
+    "7.0.0": "2018-12-10T09:52:45.311Z",
+    "7.1.0": "2019-01-08T15:07:21.434Z",
+    "8.0.0": "2019-10-04T16:22:46.436Z",
+    "8.0.1": "2019-11-12T17:50:50.736Z",
+    "8.1.0": "2019-12-01T21:52:36.535Z",
+    "8.1.1": "2020-01-24T12:33:43.693Z",
+    "8.2.0": "2020-07-24T09:16:49.908Z",
+    "9.0.0": "2020-08-23T12:25:09.072Z",
+    "9.0.1": "2020-08-23T14:25:21.294Z",
+    "9.1.0": "2020-11-13T11:41:57.904Z",
+    "9.1.1": "2021-10-20T13:10:17.918Z",
+    "10.0.0": "2021-10-20T15:31:35.069Z"
+  },
+  "homepage": "https://alexjs.com",
+  "keywords": [
+    "cli-app",
+    "cli",
+    "bin",
+    "alex",
+    "equal",
+    "race",
+    "religion",
+    "sex",
+    "orientation",
+    "identity",
+    "gender",
+    "sensitive",
+    "insensitive",
+    "neutral",
+    "writing",
+    "language",
+    "english"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/get-alex/alex.git"
+  },
+  "author": {
+    "name": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "http://wooorm.com"
+  },
+  "bugs": {
+    "url": "https://github.com/get-alex/alex/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "tbassetto": true,
+    "timdp": true,
+    "xueboren": true,
+    "paraself": true,
+    "danmartinez": true
+  },
+  "contributors": [
+    {
+      "name": "Titus Wormer",
+      "email": "tituswormer@gmail.com",
+      "url": "http://wooorm.com"
+    },
+    {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com"
+    },
+    {
+      "name": "Shinnosuke Watanabe",
+      "email": "snnskwtnb@gmail.com"
+    },
+    {
+      "name": "Carolyn Stransky",
+      "email": "carolynstransky@gmail.com"
+    },
+    {
+      "name": "Riley Martine",
+      "email": "riley.martine@protonmail.com"
+    },
+    {
+      "name": "F",
+      "email": "f@erbridge.co.uk"
+    },
+    {
+      "name": "Jen Weber",
+      "email": "j@jenweber.me"
+    },
+    {
+      "name": "John-David Dalton",
+      "email": "john.david.dalton@gmail.com"
+    },
+    {
+      "name": "Lee Mulvey",
+      "email": "lmulvey@me.com"
+    },
+    {
+      "name": "Mary McGrath",
+      "email": "m.c.mcgrath13@gmail.com"
+    },
+    {
+      "name": "Nick Radford",
+      "email": "nick@nicholasradford.com"
+    },
+    {
+      "name": "Ricky",
+      "email": "rickhanlonii@gmail.com"
+    },
+    {
+      "name": "Sachin Malhotra",
+      "email": "sachinmalhotra1993@gmail.com"
+    },
+    {
+      "name": "Simon Knott",
+      "email": "simoknott@gmail.com"
+    },
+    {
+      "name": "Taylor Reece",
+      "email": "taylor.reece@gmail.com"
+    },
+    {
+      "name": "Tim",
+      "email": "tim@itspugle.com"
+    },
+    {
+      "name": "Vaishnavi Janardhan",
+      "email": "vaish.janardhan@gmail.com"
+    },
+    {
+      "name": "Conor Hastings",
+      "email": "conor@socialtables.com"
+    },
+    {
+      "name": "Abhinav Gautam",
+      "email": "abhinav.nanhey@gmail.com"
+    },
+    {
+      "name": "Alex Gleason",
+      "email": "alex@alexgleason.me"
+    },
+    {
+      "name": "Ansel Halliburton",
+      "email": "github@anseljh.com"
+    },
+    {
+      "name": "Ben Junya",
+      "email": "bjunya@gmail.com"
+    },
+    {
+      "name": "Christian Oliff",
+      "email": "christianoliff@yahoo.com"
+    },
+    {
+      "name": "Daan",
+      "email": "daan@devign.it"
+    }
+  ]
+}
