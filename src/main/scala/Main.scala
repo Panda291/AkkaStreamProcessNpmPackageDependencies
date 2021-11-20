@@ -31,7 +31,7 @@ object Main extends App {
     .via(flowObjectify)
 
   val ObjectsBuffer = Flow[NpmPackage].buffer(10, OverflowStrategy.backpressure)
-  val ObjectsThrottle = Flow[NpmPackage].throttle(1, 1.second) // TODO: change back to 3.seconds !!!!
+  val ObjectsThrottle = Flow[NpmPackage].throttle(1, 3.second)
 
   val flowFetchDependencies: Flow[NpmPackage, NpmPackage, NotUsed] =
     Flow[NpmPackage].map(_.fetchDependencies())
@@ -51,31 +51,46 @@ object Main extends App {
           val filterDependencies: Flow[Dependency, Dependency, NotUsed] =
             Flow[Dependency].filter(_.dependencyType == "runtime")
           val filterDevDependencies: Flow[Dependency, Dependency, NotUsed] =
-            Flow[Dependency].filter(_.dependencyType == "dev")
+          Flow[Dependency].filter(_.dependencyType == "dev")
 
           val flowCountDependencies: Flow[Dependency, AccumulatedDependencyCount, NotUsed] =
-            Flow[Dependency].fold(new AccumulatedDependencyCount)((acc, n) => {
+            Flow[Dependency].fold(AccumulatedDependencyCount())((acc, n) => {
+              //              println(n)
               if (acc.map.contains(n.packageName)) {
-                if (acc.map(n.packageName).contains(n.version)) {
-                  val (run, dev) = acc.map(n.packageName)(n.version)
-                  acc.map(n.packageName)(n.version) = (run + 1, dev)
+                if (acc.map(n.packageName).contains(n.packageVersion)) {
+                  val (run, dev) = acc.map(n.packageName)(n.packageVersion)
+                  if (n.dependencyType == "runtime") {
+                    acc.map(n.packageName)(n.packageVersion) = (run + 1, dev)
+                  } else {
+                    acc.map(n.packageName)(n.packageVersion) = (run, dev + 1)
+                  }
                 } else {
-                  acc.map(n.packageName) += (n.version -> (1, 0))
+                  if (n.dependencyType == "runtime") {
+                    acc.map(n.packageName) += (n.packageVersion -> (1, 0))
+                  } else {
+                    acc.map(n.packageName) += (n.packageVersion -> (0, 1))
+                  }
                 }
               } else {
-                acc.map += (n.packageName -> mutable.Map(n.version -> (1, 0)))
+                if (n.dependencyType == "runtime") {
+                  acc.map += (n.packageName -> mutable.Map(n.packageVersion -> (1, 0)))
+                } else {
+                  acc.map += (n.packageName -> mutable.Map(n.packageVersion -> (0, 1)))
+                }
               }
-              acc
+              val temp = acc.copy() // the instance of AccumulatedDependencyCount got defined when the value flowCountDependencies was instantiated
+              acc.empty()           // this meant that every filter flow on both balance flows were accessing and accumulating on the SAME object
+              temp                  // i resolved this by clearing out the accumulator and returning a copy instead
             })
 
-          val debugPrinter: Flow[AccumulatedDependencyCount, AccumulatedDependencyCount, NotUsed] =
-            Flow[AccumulatedDependencyCount].map(d => {
-              println(d.map)
+          val debugPrinter: Flow[Dependency, Dependency, NotUsed] =
+            Flow[Dependency].map(d => {
+              println(d)
               d
             })
 
-          broadcast ~> filterDependencies ~> flowCountDependencies ~> debugPrinter ~> zipValues.in0
-          broadcast ~> filterDevDependencies ~> flowCountDependencies ~> debugPrinter ~> zipValues.in1
+          broadcast ~> filterDependencies ~> flowCountDependencies.async ~> zipValues.in0
+          broadcast ~> filterDevDependencies ~> flowCountDependencies.async ~> zipValues.in1
 
           FlowShape(broadcast.in, zipValues.out)
         }
@@ -85,19 +100,21 @@ object Main extends App {
       val mergeDependencies = builder.add(Merge[AccumulatedDependencyCount](2))
 
       val flowMapDependencies: Flow[Version, Dependency, NotUsed] =
-        Flow[Version].flatMapConcat(version => Source(version.dependencyList))
+        Flow[Version].mapConcat(_.dependencyList)
 
       val flowPairToSingle: Flow[(AccumulatedDependencyCount, AccumulatedDependencyCount), AccumulatedDependencyCount, NotUsed] =
         Flow[(AccumulatedDependencyCount, AccumulatedDependencyCount)].map(accs => {
-          for ((k, v) <- accs._2.map) {             // for each package in map 2
-            if(!accs._1.map.contains(k)) {          // if it does not exist in map 1
-              accs._1.map += (k -> v)                      // add it
-            } else {                                // if not:
-              for ((k2, v2) <- v) {                 // for each version for a package in map 2
+          //          println(accs._1.map)
+          //          println(accs._2.map)
+          for ((k, v) <- accs._2.map) { // for each package in map 2
+            if (!accs._1.map.contains(k)) { // if it does not exist in map 1
+              accs._1.map += (k -> v) // add it
+            } else { // if not:
+              for ((k2, v2) <- v) { // for each version for a package in map 2
                 if (!accs._1.map(k).contains(k2)) { // if it does not exist in map 1
-                  accs._1.map(k) += (k2 -> v2)              // add it
-                } else {                            // if not:
-                  val (dev, discard) = v2
+                  accs._1.map(k) += (k2 -> v2) // add it
+                } else { // if not:
+                  val (discard, dev) = v2
                   val (run, discard2) = accs._1.map(k)(k2)
                   accs._1.map(k)(k2) = (run, dev)
                 }
@@ -107,50 +124,59 @@ object Main extends App {
           accs._1
         })
 
-  val debugPrinter: Flow[Dependency, Dependency, NotUsed] =
-    Flow[Dependency].map(d => {
-      println(d.version, d.packageName, d.dependencyType)
-      d
+      val debugPrinter: Flow[(AccumulatedDependencyCount, AccumulatedDependencyCount), (AccumulatedDependencyCount, AccumulatedDependencyCount), NotUsed] =
+        Flow[(AccumulatedDependencyCount, AccumulatedDependencyCount)].map((a) => {
+          println(a._1.map)
+          println(a._2.map)
+          a
+        })
+
+      dispatchDependencyCheck.out(0) ~> flowMapDependencies.async ~> flowFilterDependencies.async ~> flowPairToSingle.async ~> mergeDependencies.in(0)
+      dispatchDependencyCheck.out(1) ~> flowMapDependencies.async ~> flowFilterDependencies.async ~> flowPairToSingle.async ~> mergeDependencies.in(1)
+
+      FlowShape(dispatchDependencyCheck.in, mergeDependencies.out)
+    }
+
+  )
+
+  val flowFoldAccumulatedDependencyCounts: Flow[AccumulatedDependencyCount, AccumulatedDependencyCount, NotUsed] =
+    Flow[AccumulatedDependencyCount].fold(AccumulatedDependencyCount())((acc, n) => {
+      for ((k, v) <- n.map) {
+        if(acc.map.contains(k)) {
+          for ((k2, v2) <- v) {
+            if (acc.map(k).contains(k2)) {
+
+            } else {
+              acc.map(k) += (k2 -> v2)
+            }
+          }
+        } else {
+          acc.map += (k -> v)
+        }
+      }
+      acc
     })
 
-  dispatchDependencyCheck.out(0) ~> flowMapDependencies ~> flowFilterDependencies.async ~> flowPairToSingle ~> mergeDependencies.in(0)
-  dispatchDependencyCheck.out(1) ~> flowMapDependencies ~> flowFilterDependencies.async ~> flowPairToSingle ~> mergeDependencies.in(1)
-
-  FlowShape(dispatchDependencyCheck.in, mergeDependencies.out)
-}
-
-)
-
-val flowCollectDependencies: Flow[DependencyCount, mutable.Map[String, List[(String, Int, Int)]], NotUsed] =
-  Flow[DependencyCount].fold(mutable.Map[String, List[(String, Int, Int)]]())((acc, n) => {
-    println(acc, n.packageName)
-    if (acc.contains(n.packageName)) {
-      acc(n.packageName) = (n.version, n.dependencies, n.devDependencies) +: acc(n.packageName)
-      acc
-    } else {
-      acc += (n.packageName -> List((n.version, n.dependencies, n.devDependencies)))
-      acc
+  val sink: Sink[AccumulatedDependencyCount, Future[Done]] = Sink.foreach(adc => {
+    for ((k, v) <- adc.map) {
+      println("Analysing " + k)
+      for ((v, (r, d)) <- v) {
+        println("version: " + v + ", Dependencies: " + r + ", DevDependencies: " + d)
+      }
     }
   })
 
-val sink: Sink[AccumulatedDependencyCount, Future[Done]] = Sink.foreach(adc => {
-  for ((k, v) <- adc.map) {
-    println("Analysing " + k)
-    for ((v, (r, d)) <- v) {
-      println("version: " + v + ", Dependencies: " + r + ", DevDependencies: " + d)
-    }
-  }
-})
-val runnableGraph: RunnableGraph[Future[IOResult]] = source
-  .via(flowUnzipAndCreateObjects)
-  .via(ObjectsBuffer)
-  .via(ObjectsThrottle)
-  .via(flowFetchDependencies)
-  .via(flowMapVersions)
-  .buffer(12, OverflowStrategy.backpressure)
-  .via(flowDependencies)
-//      .via(flowCollectDependencies)
+  val runnableGraph: RunnableGraph[Future[IOResult]] =
+      source
+      .via(flowUnzipAndCreateObjects)
+//    Source(List(NpmPackage("aconite")))
+      .via(ObjectsBuffer)
+      .via(ObjectsThrottle)
+      .via(flowFetchDependencies)
+      .via(flowMapVersions)
+      .buffer(12, OverflowStrategy.backpressure)
+      .via(flowDependencies)
+      .via(flowFoldAccumulatedDependencyCounts)
       .to(sink)
-//  .to(Sink.foreach(println)
-runnableGraph.run()
+  runnableGraph.run()
 }

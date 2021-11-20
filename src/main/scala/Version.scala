@@ -5,7 +5,7 @@ case class Version(version: String, jsonObject: Value) {
   var dependencyList: List[Dependency] = List()
   try {
     for ((k, v) <- jsonObject("dependencies").obj.toList) {
-      dependencyList = Dependency(packageName, v.str, "runtime") +: dependencyList
+      dependencyList = Dependency(packageName, version, "runtime") +: dependencyList
     }
   } catch {
     case e: Exception =>
@@ -13,7 +13,7 @@ case class Version(version: String, jsonObject: Value) {
 
   try {
     for ((k, v) <- jsonObject("devDependencies").obj.toList) {
-      dependencyList = Dependency(packageName, v.str, "dev") +: dependencyList
+      dependencyList = Dependency(packageName, version, "dev") +: dependencyList
     }
   } catch {
     case e: Exception =>

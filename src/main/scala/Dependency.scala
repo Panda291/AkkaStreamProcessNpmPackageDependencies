@@ -1,2 +1,2 @@
-case class Dependency(packageName: String, version: String, dependencyType: String) {
+case class Dependency(packageName: String, packageVersion: String, dependencyType: String) {
 }
