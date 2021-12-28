@@ -29,7 +29,7 @@ object Main extends App {
     .via(flowSplitLines)
     .via(flowObjectify)
 
-  val ObjectsBuffer = Flow[NpmPackage].buffer(10, OverflowStrategy.backpressure)
+//  val ObjectsBuffer = Flow[NpmPackage].buffer(10, OverflowStrategy.backpressure)
   val ObjectsThrottle = Flow[NpmPackage].throttle(1, 3.second)
 
   val flowFetchDependencies: Flow[NpmPackage, NpmPackage, NotUsed] =
